@@ -1,21 +1,10 @@
-// export const ButtonStyles = makeStyles(()=>({
-    
-// }))
+const styles = {
+    button: {
+        textTransform: 'none',
+        padding: '30px 80px',
+        borderRadius: '40px',
+        background: 'linear-gradient(90deg, #8E2DE2 9%, #4A00E0 86%);',
+    }
+};
 
-export {};
-
-/* 
-import { makeStyles } from '@mui/styles';
-
-const useStyles = makeStyles({
-  root: {
-    backgroundColor: 'red',
-    color: (props) => props.color,
-  },
-});
-
-export default function MyComponent(props) {
-  const classes = useStyles(props);
-  return <div className={classes.root} />;
-}
- */
+export default styles;

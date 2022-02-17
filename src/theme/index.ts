@@ -18,6 +18,11 @@ const theme = createTheme({
             fontWeight: 800,
             lineHeight: '96px',
         },
+        h2: {
+            fontSize: '54px',
+            fontWeight: 800,
+            lineHeight: '64px',
+        },
         body1: {
             fontSize: '26px',
             fontWeight: 600,
@@ -35,23 +40,25 @@ const theme = createTheme({
             fontWeight: 700,
             lineHeight: '20px',
         },
+        caption: {
+            fontSize: '18px',
+            fontWeight: 500,
+            lineHeight: '18px',
+            fontStyle: 'italic',
+        }
     },
     components: {
         MuiButton: {
             defaultProps: {
                 disableRipple: true,
             },
-            styleOverrides: {
-                root: {
-                    textTransform: 'none',
-                    padding: '30px 80px',
-                    borderRadius: '40px',
-                    background: 'linear-gradient(90deg, #8E2DE2 9%, #4A00E0 86%);'
-                    // fontSize: '2rem',
-                },
+        },
+        MuiCardActionArea: {
+            defaultProps: {
+                disableRipple: true,
             },
         },
-    }
+    },
 });
 
 export default theme;

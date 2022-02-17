@@ -1,9 +1,11 @@
+const headerHeight: number = 100;
+
 const styles = {
     box: {
         position: 'absolute',
         top: 0,
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
-        height: '100px',
+        height: `${headerHeight}px`,
         width: '100%',
     },
     stack: {
@@ -12,8 +14,7 @@ const styles = {
         mx: 'auto',
     },
     logo: {
-        position: 'absolute',
-        top: '50%',
+        marginTop: `${headerHeight}px`,
     }
 };
 
