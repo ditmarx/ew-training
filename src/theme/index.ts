@@ -14,9 +14,9 @@ const theme = createTheme({
     typography: {
         fontFamily: '"Montserrat", sans-serif',
         h1: {
-            fontSize: '76px',
+            fontSize: '76px',       // 4.75rem
             fontWeight: 800,
-            lineHeight: '96px',
+            lineHeight: '96px',     // 6rem
         },
         h2: {
             fontSize: '54px',
@@ -45,7 +45,7 @@ const theme = createTheme({
             fontWeight: 500,
             lineHeight: '18px',
             fontStyle: 'italic',
-        }
+        },
     },
     components: {
         MuiButton: {
@@ -60,5 +60,12 @@ const theme = createTheme({
         },
     },
 });
+
+theme.typography.h1 = {
+    ...theme.typography.h1,
+    // [theme.breakpoints.down('md')]: { fontSize: '46px', },
+};
+
+// console.log(theme);
 
 export default theme;

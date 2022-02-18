@@ -1,5 +1,5 @@
 import { Grid, Typography } from '@mui/material';
-import LaunchCard from '../LaunchCard';
+import LaunchCard from './LaunchCard';
 import styles from './LaunchesOverview.styles';
 
 const LaunchesOverview = () => {
@@ -18,10 +18,11 @@ const LaunchesOverview = () => {
                 container
                 columnSpacing={2}
                 // rowSpacing={0}
+                justifyContent="center"
                 sx={styles.grid}
             >
                 {new Array(6).fill('').map((card, idx) => (
-                    <Grid item xs={12} sm={12} md={6} key={idx}>
+                    <Grid item xs={12} sm={8} md={6} key={idx}>
                         <LaunchCard />
                     </Grid>
                 ))}

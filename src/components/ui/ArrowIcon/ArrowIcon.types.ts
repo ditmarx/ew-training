@@ -1,6 +1,6 @@
 type ArrowIconProps = {
     direction: 'left' | 'right',
-    width?: number
+    width?: number,
 };
 
 export default ArrowIconProps;

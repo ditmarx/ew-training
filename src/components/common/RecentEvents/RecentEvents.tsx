@@ -1,40 +1,34 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import { Box, Button, Typography } from '@mui/material';
 import SwiperCore, { Navigation, Virtual } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Button, Stack, Typography } from '@mui/material';
 import ArrowIcon from '../../ui/ArrowIcon';
-import EventCard from '../EventCard';
+import EventCard from './EventCard';
 import styles from './RecentEvents.styles';
-
-const slides = new Array(20).fill('').map((slide, idx) => (`Slide ${idx + 1}`));
+import slides from './__mocks__';
 
 const RecentEvents = () => {
     const [swiper, setSwiper] = useState<SwiperCore>();
+    const slideToPrev = useCallback(() => swiper?.slidePrev(), [swiper]);
+    const slideToNext = useCallback(() => swiper?.slideNext(), [swiper]);
 
     return (
         <>
-            {/* Section title + navigation buttons */}
-            <Stack
-                direction="row"
-                justifyContent="space-between"
-                sx={styles.navbar}
-            >
+            {/* Section's title + navigation buttons with arrow icons */}
+            <Box sx={styles.title}>
                 <Typography variant="h2">
                     Recent Events
                 </Typography>
-                <Stack
-                    direction="row"
-                    spacing={2}
-                >
-                    <Button onClick={() => swiper?.slidePrev() }>
+                <Box sx={styles.arrowBlock}>
+                    <Button onClick={slideToPrev}>
                         <ArrowIcon direction="left" />
                     </Button>
-                    <Button onClick={() => swiper?.slideNext() }>
+                    <Button onClick={slideToNext}>
                         <ArrowIcon direction="right" />
                     </Button>
-                </Stack>
-            </Stack>
+                </Box>
+            </Box>
 
             {/* Event Carousel */}
             <Swiper

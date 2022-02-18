@@ -1,6 +1,14 @@
 const styles = {
-    navbar: {
-        marginBottom: '50px',
+    title: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        marginBottom: 5,
+    },
+    arrowBlock: {
+        display: 'flex',
+        '& > :not(:first-child)': {
+            marginLeft: 3,
+        },
     },
 };
 

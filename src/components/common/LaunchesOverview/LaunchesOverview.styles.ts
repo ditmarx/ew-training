@@ -1,7 +1,7 @@
 const styles = {
     typoTitle: {
-        marginTop: '100px',
-        marginBottom: '40px',
+        marginTop: 10,
+        marginBottom: 4,
     },
     grid: {
 

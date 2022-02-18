@@ -1,8 +1,8 @@
 const styles = {
     card: {
-        maxWidth: '380px',
         backgroundColor: 'transparent',
         border: 0,
+        maxWidth: 380,
     },
     content: {
         padding: 0,
@@ -10,9 +10,10 @@ const styles = {
     date: {
         backgroundColor: '#4A00E0',
         borderRadius: '19px',
-        marginBottom: '15px',
-        marginTop: '20px',
-        padding: '10px 30px',
+        marginBottom: 1.5,
+        marginTop: 2,
+        paddingX: 3,
+        paddingY: 1,
         width: 'fit-content',
     },
 };

@@ -5,7 +5,10 @@ import styles from './Button.styles';
 
 const Button: FC<ButtonProps> = (props) => {
     return (
-        <MuiButton sx={styles.button} {...props} />
+        <MuiButton
+            sx={styles.button}
+            {...props}
+        />
     );
 };
 

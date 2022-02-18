@@ -1,4 +1,3 @@
-import { ArrowBack as ArrowBackIcon } from '@mui/icons-material';
 import ArrowIcon from '../ArrowIcon';
 import { Stack, Typography } from "@mui/material";
 

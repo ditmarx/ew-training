@@ -2,16 +2,16 @@ const headerHeight: number = 100;
 
 const styles = {
     box: {
-        position: 'absolute',
-        top: 0,
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
         height: `${headerHeight}px`,
+        position: 'absolute',
+        top: 0,
         width: '100%',
     },
     stack: {
         height: '100%',
-        maxWidth: '1180px',
-        mx: 'auto',
+        maxWidth: 1180,
+        marginX: 'auto',
     },
     logo: {
         marginTop: `${headerHeight}px`,
