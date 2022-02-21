@@ -1,25 +1,21 @@
 import { FC } from 'react';
-import { Box, Stack } from "@mui/material";
+import { Box } from "@mui/material";
 import BackToHome from "../../ui/BackToHome";
 import Logo from '../../ui/Logo';
-import HeaderProps from './Header.types';
 import styles from './Header.styles';
+import HeaderProps from './Header.types';
 
 const Header: FC<HeaderProps> = ({ home }) => {
     return (
         <Box
             component="header"
-            sx={styles.box}
+            position="absolute"
+            sx={styles.outerBox}
         >
-            <Stack
-                direction="row"
-                justifyContent={home ? "center" : "space-between"}
-                alignItems="center"
-                sx={styles.stack}
-            >
+            <Box sx={styles.innerBox}>
                 {!home && <BackToHome />}
                 <Logo sx={styles.logo} />
-            </Stack>
+            </Box>
         </Box>
     );
 };

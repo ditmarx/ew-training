@@ -1,21 +1,32 @@
-const headerHeight: number = 100;
+import { alpha } from '@mui/material/styles';
+import { pixelsToRems } from '../../../utils/helper';
+
+const headerHeightPx = [60, 70, 80, 90, 100];
+const headerHeightRem = headerHeightPx.map(px => pixelsToRems(px));
+const logoWidthRem = headerHeightPx.map(px => pixelsToRems(0.95 * px));
 
 const styles = {
-    box: {
-        backgroundColor: 'rgba(0, 0, 0, 0.2)',
-        height: `${headerHeight}px`,
-        position: 'absolute',
+    outerBox: {
+        backgroundColor: alpha('#000', 0.2),    // = 'rgba(0, 0, 0, 0.2)'
+        // position: 'absolute',                // doesn't work when height is object|array
         top: 0,
         width: '100%',
+        height: headerHeightRem,
     },
-    stack: {
+    innerBox: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         height: '100%',
-        maxWidth: 1180,
+        minWidth: 'fit-content',
+        maxWidth: 1440,
         marginX: 'auto',
+        paddingX: [3, 4, 7, 10, 13],
     },
     logo: {
-        marginTop: `${headerHeight}px`,
-    }
+        minWidth: logoWidthRem,
+        marginTop: headerHeightRem,
+    },
 };
 
 export default styles;

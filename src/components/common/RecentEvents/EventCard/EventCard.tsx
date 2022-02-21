@@ -14,6 +14,8 @@ const EventCard: FC<EventCardProps> = ({ text }) => {
                 height="264"
                 image="/static/images/cards/contemplative-reptile.jpg"
                 alt=""
+                onClick={() => {console.log('AAA')}}
+                sx={{ '&:hover': { cursor: 'pointer' } }}
             />
             <CardContent sx={styles.content}>
                 <Typography

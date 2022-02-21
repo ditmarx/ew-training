@@ -6,7 +6,7 @@ import styles from './HomeMain.styles';
 const HomeMain = () => {
     return (
         <Box
-            component="main"
+            component="section"
             sx={styles.box}
         >
             <RecentEvents />

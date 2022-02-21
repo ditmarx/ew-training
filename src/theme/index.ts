@@ -1,7 +1,11 @@
 import { createTheme } from '@mui/material/styles';
+import { pixelsToRems } from '../utils/helper';
 
 const theme = createTheme({
     spacing: 10,
+    shape: {
+        borderRadius: 10,
+    },
     palette: {
         background: {
             default: '#181B48'
@@ -9,42 +13,41 @@ const theme = createTheme({
         text: {
             primary: '#F1EBFF',
             secondary: '#C0C0C0',
-        }
+        },
     },
     typography: {
         fontFamily: '"Montserrat", sans-serif',
         h1: {
-            fontSize: '76px',       // 4.75rem
             fontWeight: 800,
-            lineHeight: '96px',     // 6rem
+            fontSize: pixelsToRems(76),
+            lineHeight: 1.21,           // = 92px/76px
         },
         h2: {
-            fontSize: '54px',
             fontWeight: 800,
-            lineHeight: '64px',
+            fontSize: pixelsToRems(54),
+            lineHeight: 1.185,          // = 64px/54px
         },
         body1: {
-            fontSize: '26px',
-            fontWeight: 600,
-            lineHeight: '38px',
+            fontSize: pixelsToRems(26),
+            lineHeight: 1.46,           // = 38px/26px
         },
         body2: {
             fontFamily: '"Roboto", sans-serif',
-            fontSize: '17px',
             fontWeight: 400,
-            lineHeight: '28px',
-            color: '#C0C0C0',
+            fontSize: pixelsToRems(17),
+            lineHeight: 1.647,          // = 28px/17px
         },
         button: {
-            fontSize: '20px',
             fontWeight: 700,
-            lineHeight: '20px',
+            fontSize: pixelsToRems(20),
+            lineHeight: 1,
+            textTransform: 'none',
         },
         caption: {
-            fontSize: '18px',
             fontWeight: 500,
-            lineHeight: '18px',
             fontStyle: 'italic',
+            fontSize: pixelsToRems(18),
+            lineHeight: 1,
         },
     },
     components: {
@@ -58,14 +61,66 @@ const theme = createTheme({
                 disableRipple: true,
             },
         },
+        MuiTypography: {
+            defaultProps: {
+                variantMapping: {
+                    body1_600: 'p',
+                    body1_700: 'p',
+                    body1_800: 'p',
+                },
+            },
+        },
     },
 });
 
 theme.typography.h1 = {
     ...theme.typography.h1,
-    // [theme.breakpoints.down('md')]: { fontSize: '46px', },
+    [theme.breakpoints.down('lg')]: { fontSize: pixelsToRems(64) },
+    [theme.breakpoints.down('md')]: { fontSize: pixelsToRems(52) },
+    [theme.breakpoints.down('sm')]: { fontSize: pixelsToRems(42) },
 };
 
-// console.log(theme);
+theme.typography.h2 = {
+    ...theme.typography.h2,
+    [theme.breakpoints.down('lg')]: { fontSize: pixelsToRems(50) },
+    [theme.breakpoints.down('md')]: { fontSize: pixelsToRems(40) },
+    [theme.breakpoints.down('sm')]: { fontSize: pixelsToRems(32) },
+};
+
+theme.typography.body1 = {
+    ...theme.typography.body1,
+    [theme.breakpoints.down('lg')]: { fontSize: pixelsToRems(24) },
+    [theme.breakpoints.down('md')]: { fontSize: pixelsToRems(22) },
+    [theme.breakpoints.down('sm')]: { fontSize: pixelsToRems(18) },
+};
+
+theme.typography.body2 = {
+    ...theme.typography.body2,
+    color: theme.palette.text.secondary,
+};
+
+theme.typography.body1_600 = {
+    ...theme.typography.body1,
+    fontWeight: 600,
+};
+
+theme.typography.body1_700 = {
+    ...theme.typography.body1,
+    fontWeight: 700,
+};
+
+theme.typography.body1_800 = {
+    ...theme.typography.body1,
+    fontWeight: 800,
+};
+
+theme.typography.caption = {
+    ...theme.typography.caption,
+    [theme.breakpoints.down('lg')]: { fontSize: pixelsToRems(18) },
+    [theme.breakpoints.down('md')]: { fontSize: pixelsToRems(16) },
+    [theme.breakpoints.down('sm')]: { fontSize: pixelsToRems(15) },
+};
+
+console.log(theme);
 
 export default theme;

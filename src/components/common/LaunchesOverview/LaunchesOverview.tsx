@@ -8,12 +8,13 @@ const LaunchesOverview = () => {
             {/* Section title */}
             <Typography
                 variant="h2"
-                textAlign="center"
+                align="center"
                 sx={styles.typoTitle}
             >
                 Spaceflight Launches
             </Typography>
 
+            {/* Cards */}
             <Grid
                 container
                 columnSpacing={2}
@@ -26,7 +27,7 @@ const LaunchesOverview = () => {
                         <LaunchCard />
                     </Grid>
                 ))}
-            </Grid>        
+            </Grid>
         </>
     );
 };

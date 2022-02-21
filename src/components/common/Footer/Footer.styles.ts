@@ -1,12 +1,25 @@
 const styles = {
-    box: {
+    outerBox: {
+        // width: '100%',
+    },
+    innerBox: {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        maxWidth: 1180,
+        minWidth: 'fit-content',
+        maxWidth: 1440,
         marginX: 'auto',
-        paddingY: 5,
+        paddingX: [3, 4, 7, 10, 13],
+        paddingY: [3, 4, 6, 7, 8],
     },
+    logo: {
+        minWidth: 49,
+        lineHeight: 0,
+    },
+    text: {
+        textAlign: 'right',
+        paddingLeft: 3,
+    }
 };
 
 export default styles;

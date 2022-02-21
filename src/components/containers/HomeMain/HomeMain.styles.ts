@@ -2,10 +2,10 @@ const styles = {
     box: {
         backgroundColor: '#1C2056',
         maxWidth: 1440,
-        marginTop: -12,
-        paddingX: 13,
-        paddingY: 10,
-        mx: 'auto',
+        marginX: 'auto',
+        paddingX: [3, 4, 7, 10, 13],
+        paddingY: [3, 4, 6, 8, 11.8],
+        marginTop: -11.8,
     },
 };
 

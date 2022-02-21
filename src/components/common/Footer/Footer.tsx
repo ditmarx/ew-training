@@ -6,12 +6,17 @@ const Footer = () => {
     return (
         <Box
             component="footer"
-            sx={styles.box}
+            sx={styles.outerBox}
         >
-            <Logo width={49} />
-            <Typography variant="body2">
-                © 2022 Copyright
-            </Typography>
+            <Box sx={styles.innerBox}>
+                <Logo sx={styles.logo} />
+                <Typography
+                    variant="body2"
+                    sx={styles.text}
+                >
+                    © 2022 Copyright
+                </Typography>
+            </Box>
         </Box>
     );
 };

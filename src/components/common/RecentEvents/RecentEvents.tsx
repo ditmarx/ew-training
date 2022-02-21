@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Box, Button, Typography } from '@mui/material';
 import SwiperCore, { Navigation, Virtual } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,33 +13,39 @@ const RecentEvents = () => {
     const slideToPrev = useCallback(() => swiper?.slidePrev(), [swiper]);
     const slideToNext = useCallback(() => swiper?.slideNext(), [swiper]);
 
+    // useEffect(() => console.log(swiper), [swiper]);
+
     return (
         <>
             {/* Section's title + navigation buttons with arrow icons */}
             <Box sx={styles.title}>
-                <Typography variant="h2">
+                <Typography
+                    variant="h2"
+                    align="center"
+                >
                     Recent Events
                 </Typography>
-                <Box sx={styles.arrowBlock}>
+                {/* <Box sx={styles.arrowBlock}> */}
                     <Button onClick={slideToPrev}>
                         <ArrowIcon direction="left" />
                     </Button>
                     <Button onClick={slideToNext}>
                         <ArrowIcon direction="right" />
                     </Button>
-                </Box>
+                {/* </Box> */}
             </Box>
 
             {/* Event Carousel */}
             <Swiper
-                slidesPerView={3}
-                spaceBetween={30}
                 modules={[Navigation, Virtual]}
                 virtual
+                slidesPerView={3}
+                spaceBetween={30}
+                // breakpoints={styles.swiperBreakpoints}
                 onSwiper={setSwiper}
             >
                 {slides.map((slide, idx) => (
-                    <SwiperSlide key={idx}>
+                    <SwiperSlide key={idx} virtualIndex={idx}>
                         <EventCard text={slide} />
                     </SwiperSlide>
                 ))}
