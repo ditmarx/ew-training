@@ -1,4 +1,5 @@
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
+import Chip from '../../../ui/Chip';
 import styles from './LaunchCard.styles';
 
 const LaunchCard = () => {
@@ -12,13 +13,12 @@ const LaunchCard = () => {
                 sx={styles.image}
             />
             <CardContent sx={styles.content}>
-                <Typography
-                    variant="caption"
-                    component="div"
-                    sx={styles.date}
+                <Chip
+                    gradient
+                    sx={styles.chip}
                 >
                     Dec. 6, 2020, 6:17 p.m.
-                </Typography>
+                </Chip>
                 <Typography
                     variant="body1"
                     sx={styles.title}

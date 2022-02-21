@@ -67,6 +67,7 @@ const theme = createTheme({
                     body1_600: 'p',
                     body1_700: 'p',
                     body1_800: 'p',
+                    body2_700: 'p',
                 },
             },
         },
@@ -112,6 +113,11 @@ theme.typography.body1_700 = {
 theme.typography.body1_800 = {
     ...theme.typography.body1,
     fontWeight: 800,
+};
+
+theme.typography.body2_700 = {
+    ...theme.typography.body2,
+    fontWeight: 700,
 };
 
 theme.typography.caption = {

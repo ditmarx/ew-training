@@ -9,7 +9,6 @@ const Header: FC<HeaderProps> = ({ home }) => {
     return (
         <Box
             component="header"
-            position="absolute"
             sx={styles.outerBox}
         >
             <Box sx={styles.innerBox}>

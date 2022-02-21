@@ -12,21 +12,15 @@ const styles = {
     content: {
         padding: 0,
     },
-    date: {
-        background: 'linear-gradient(90deg, #8E2DE2 9%, #4A00E0 86%);',
-        borderRadius: '19px',
+    title: {
+        textAlign: 'center',
+    },
+    chip: {
         marginBottom: 2,
         marginTop: -2,
         marginX: 'auto',
-        paddingY: 1,
-        paddingX: 3,
-        width: 'fit-content',
-        textAlign: 'center',
         position: 'relative',
         zIndex: 2,
-    },
-    title: {
-        textAlign: 'center',
     },
 };
 

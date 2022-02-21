@@ -16,6 +16,10 @@ const styles = {
         paddingY: 1,
         width: 'fit-content',
     },
+    chip: {
+        marginBottom: 1.5,
+        marginTop: 2,
+    },
 };
 
 export default styles;

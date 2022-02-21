@@ -1,10 +1,10 @@
-import { Grid, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import LaunchCard from './LaunchCard';
 import styles from './LaunchesOverview.styles';
 
 const LaunchesOverview = () => {
     return (
-        <>
+        <Box>
             {/* Section title */}
             <Typography
                 variant="h2"
@@ -28,7 +28,7 @@ const LaunchesOverview = () => {
                     </Grid>
                 ))}
             </Grid>
-        </>
+        </Box>
     );
 };
 

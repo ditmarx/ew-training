@@ -8,7 +8,7 @@ const logoWidthRem = headerHeightPx.map(px => pixelsToRems(0.95 * px));
 const styles = {
     outerBox: {
         backgroundColor: alpha('#000', 0.2),    // = 'rgba(0, 0, 0, 0.2)'
-        // position: 'absolute',                // doesn't work when height is object|array
+        position: 'absolute' as const,
         top: 0,
         width: '100%',
         height: headerHeightRem,
@@ -18,7 +18,6 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         height: '100%',
-        minWidth: 'fit-content',
         maxWidth: 1440,
         marginX: 'auto',
         paddingX: [3, 4, 7, 10, 13],

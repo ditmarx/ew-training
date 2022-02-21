@@ -1,9 +1,14 @@
 import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card, CardMedia, CardContent, Typography } from '@mui/material';
+import Chip from '../../../ui/Chip';
 import styles from './EventCard.styles';
 import EventCardProps from './EventCard.types';
 
 const EventCard: FC<EventCardProps> = ({ text }) => {
+    const navigate = useNavigate();
+    const navToEventPage = () => navigate('/event');
+
     return (
         <Card
             variant="outlined"
@@ -14,19 +19,18 @@ const EventCard: FC<EventCardProps> = ({ text }) => {
                 height="264"
                 image="/static/images/cards/contemplative-reptile.jpg"
                 alt=""
-                onClick={() => {console.log('AAA')}}
+                onClick={navToEventPage}
                 sx={{ '&:hover': { cursor: 'pointer' } }}
             />
             <CardContent sx={styles.content}>
-                <Typography
-                    variant="caption"
-                    component="div"
-                    sx={styles.date}
-                >
-                    {/* Dec. 6, 2020, 6:17 p.m. */}
+                <Chip sx={styles.chip}>
                     {text}
-                </Typography>
-                <Typography variant="body1">
+                </Chip>
+                <Typography
+                    variant="body1"
+                    onClick={navToEventPage}
+                    sx={{ '&:hover': { cursor: 'pointer' } }}
+                >
                     Falcon 9 Block 5 | Dragon CRS-2 SpX-21
                 </Typography>
             </CardContent>

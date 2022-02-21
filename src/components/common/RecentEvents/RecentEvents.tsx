@@ -16,7 +16,7 @@ const RecentEvents = () => {
     // useEffect(() => console.log(swiper), [swiper]);
 
     return (
-        <>
+        <Box>
             {/* Section's title + navigation buttons with arrow icons */}
             <Box sx={styles.title}>
                 <Typography
@@ -46,11 +46,13 @@ const RecentEvents = () => {
             >
                 {slides.map((slide, idx) => (
                     <SwiperSlide key={idx} virtualIndex={idx}>
-                        <EventCard text={slide} />
+                        <EventCard
+                            text={slide}
+                        />
                     </SwiperSlide>
                 ))}
             </Swiper>
-        </>
+        </Box>
     );
 };
 
