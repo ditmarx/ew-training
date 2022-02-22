@@ -1,8 +1,8 @@
 const styles = {
-    text: {
-        color: 'white',
-        width: 'fit-content',
-        '& > b': {
+    basic: {
+        color: '#fff',
+        // width: 'fit-content',
+        '& b': {
             fontWeight: 700,
         },
     },

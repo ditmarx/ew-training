@@ -1,8 +1,9 @@
-import { SxProps } from '@mui/system';
+// import { SxProps, Theme } from '@mui/system';
+import { BoxProps } from '@mui/material';
 
 type ChipProps = {
     gradient?: boolean;
-    sx?: SxProps;
-};
+    // sx?: SxProps<Theme>;
+} & BoxProps;
 
 export default ChipProps;

@@ -13,8 +13,16 @@ const styles = {
     chip: {
         marginBottom: 3,
     },
-
-
+    cardImage: {
+        width: '49%',
+        marginRight: 'auto',
+        border: 1,
+        '& > img': {
+        },
+    },
+    cardContent: {
+        width: '49%',
+    },
 };
 
 export default styles;

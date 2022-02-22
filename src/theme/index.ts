@@ -64,10 +64,13 @@ const theme = createTheme({
         MuiTypography: {
             defaultProps: {
                 variantMapping: {
-                    body1_600: 'p',
-                    body1_700: 'p',
-                    body1_800: 'p',
-                    body2_700: 'p',
+                    body1: 'div',
+                    body2: 'div',
+                    body1_600: 'div',
+                    body1_700: 'div',
+                    body1_800: 'div',
+                    body2_700: 'div',
+                    caption: 'div',
                 },
             },
         },

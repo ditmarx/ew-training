@@ -1,29 +1,30 @@
 import { FC } from 'react';
-import { Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import styles from './InfoItem.styles';
 import InfoItemProps from './InfoItem.types';
 
-const InfoItem: FC<InfoItemProps> = ({ term, value, vertical, centered }) => {
+const InfoItem: FC<InfoItemProps> = ({ term, value, vertical, centered, sx, ...props }) => {
 
     return (
-        <Typography
-            variant="body2"
-            align={centered ? 'center' : 'inherit'}
-            sx={styles.text}
-            mb={undefined}
+        <Box
+            sx={{
+                typography: 'body2',
+                ...styles.basic,
+                textAlign: (centered ? 'center' : 'inherit'),
+                ...sx,
+            }}
+            {...props}
         >
             {vertical ? (
                 <>
-                    {term}
-                    <br />
-                    <b>{value}</b>
+                    {term}<br /><b>{value}</b>
                 </>
             ) : (
                 <>
                     <b>{`${term}:`}</b> {value}
                 </>
             )}
-        </Typography>
+        </Box>
     );
 };
 

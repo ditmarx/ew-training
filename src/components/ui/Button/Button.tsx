@@ -6,7 +6,10 @@ import styles from './Button.styles';
 const Button: FC<MuiButtonProps> = (props) => {
     return (
         <MuiButton
-            sx={styles.button}
+            sx={{
+                ...styles.button,
+                ...props.sx,
+            }}
             {...props}
         />
     );

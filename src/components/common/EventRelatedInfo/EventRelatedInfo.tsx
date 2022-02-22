@@ -14,11 +14,13 @@ const EventRelatedInfo = () => {
             </Typography>
 
             <Box sx={styles.card}>
-                <img
-                    src=""
-                    alt=""
-                />
-                <Box>
+                <Box sx={styles.cardImage}>
+                    <img
+                        src=""
+                        alt=""
+                    />
+                </Box>
+                <Box sx={styles.cardContent}>
                     <Typography variant="body1_700">
                         Long March 3B/E | Gaofen 14
                     </Typography>
