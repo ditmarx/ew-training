@@ -10,7 +10,7 @@ const EventRelatedInfo = () => {
                 variant="h2"
                 sx={styles.title}
             >
-                Related information
+                Related Information
             </Typography>
 
             <Box sx={styles.card}>
@@ -21,20 +21,25 @@ const EventRelatedInfo = () => {
                     />
                 </Box>
                 <Box sx={styles.cardContent}>
-                    <Typography variant="body1_700">
+                    <Typography
+                        variant="body1_700"
+                        sx={styles.contentTitle}
+                    >
                         Long March 3B/E | Gaofen 14
                     </Typography>
-                    <Chip sx={styles.chip}>
+                    <Chip sx={styles.contentDate}>
                         Dec. 6, 2020, 6:17 p.m.
                     </Chip>
-                    <InfoItem
-                        term={'Destination'}
-                        value={'Low Earth Orbit'}
-                    />
-                    <InfoItem
-                        term={'Mission'}
-                        value={'Resupply'}
-                    />
+                    <Box sx={styles.infoItems}>
+                        <InfoItem
+                            term={'Destination'}
+                            value={'Low Earth Orbit'}
+                        />
+                        <InfoItem
+                            term={'Mission'}
+                            value={'Resupply'}
+                        />
+                    </Box>
                     <Typography variant="body2">
                         SpaceX will launch the first cargo variant of its Dragon 2 spacecraft
                         on their 21st commercial resupply services mission to the International

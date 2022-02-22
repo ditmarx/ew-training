@@ -20,7 +20,7 @@ const LaunchCard = () => {
                     Dec. 6, 2020, 6:17 p.m.
                 </Chip>
                 <Typography
-                    variant="body1"
+                    variant="body1_700"
                     sx={styles.title}
                 >
                     Long March 3B/E | Gaofen 14

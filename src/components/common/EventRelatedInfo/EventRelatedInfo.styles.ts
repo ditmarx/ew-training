@@ -7,12 +7,6 @@ const styles = {
         display: 'flex' as const,
         flexDirection: 'row' as const,
     },
-    eventTitle: {
-        marginBottom: 1.6,
-    },
-    chip: {
-        marginBottom: 3,
-    },
     cardImage: {
         width: '49%',
         marginRight: 'auto',
@@ -23,6 +17,19 @@ const styles = {
     cardContent: {
         width: '49%',
     },
+    contentTitle: {
+        marginBottom: [1.6],
+    },
+    contentDate: {
+        marginBottom: [3],
+    },
+    infoItems: {
+        marginBottom: [2],
+        '& > :not(:last-of-type)': {
+            marginBottom: [0.5],
+        },
+    },
+
 };
 
 export default styles;

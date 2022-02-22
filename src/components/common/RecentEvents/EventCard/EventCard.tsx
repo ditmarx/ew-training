@@ -27,7 +27,7 @@ const EventCard: FC<EventCardProps> = ({ text }) => {
                     {text}
                 </Chip>
                 <Typography
-                    variant="body1"
+                    variant="body1_700"
                     onClick={navToEventPage}
                     sx={{ '&:hover': { cursor: 'pointer' } }}
                 >
