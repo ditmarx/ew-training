@@ -3,12 +3,12 @@ import { Button as MuiButton } from '@mui/material';
 import { ButtonProps as MuiButtonProps } from '@mui/material';
 import styles from './Button.styles';
 
-const Button: FC<MuiButtonProps> = (props) => {
+const Button: FC<MuiButtonProps> = ({ sx, ...props }) => {
     return (
         <MuiButton
             sx={{
                 ...styles.button,
-                ...props.sx,
+                ...sx,
             }}
             {...props}
         />

@@ -5,7 +5,6 @@ const styles = {
         marginX: 'auto',
         paddingX: [3, 4, 7, 10, 13],
         paddingY: [3, 4, 6, 8, 11.8],
-        marginTop: -11.8,
         '& > div:not(:last-of-type)': {
             marginBottom: 10,
         },

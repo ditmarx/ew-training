@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
-import Button from '../../ui/Button';
-import Chip from '../../ui/Chip';
+import Button from '../../../ui/Button';
+import Chip from '../../../ui/Chip';
 import styles from './EventHero.styles';
 
 const HomeHero = () => {

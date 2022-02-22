@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, /*useEffect,*/ useState } from "react";
 import { Box, Button, Typography } from '@mui/material';
 import SwiperCore, { Navigation, Virtual } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";

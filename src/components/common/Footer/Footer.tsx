@@ -14,7 +14,7 @@ const Footer = () => {
                     variant="body2"
                     sx={styles.text}
                 >
-                    © 2022 Copyright
+                    &copy; {new Date().getFullYear()} Copyright
                 </Typography>
             </Box>
         </Box>

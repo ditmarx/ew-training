@@ -1,6 +1,8 @@
 // import { lazy } from 'react';
 import HomePage from '../pages/HomePage';
 import EventPage from '../pages/EventPage';
+import LaunchPage from '../pages/LaunchPage';
+import RocketPage from '../pages/RocketPage';
 import About from '../pages/About';
 import NotFound from '../pages/NotFound';
 
@@ -16,6 +18,14 @@ const paths = [
     {
         path: '/event',
         element: <EventPage />,
+    },
+    {
+        path: '/launch',
+        element: <LaunchPage />,
+    },
+    {
+        path: '/rocket',
+        element: <RocketPage />,
     },
     {
         path: '/about',

@@ -8,12 +8,14 @@ const styles = {
     image: {
         border: 0,
         zIndex: 1,
+        cursor: 'pointer',
     },
     content: {
         padding: 0,
     },
     title: {
         textAlign: 'center',
+        cursor: 'pointer',
     },
     chip: {
         marginBottom: 2,
@@ -21,6 +23,7 @@ const styles = {
         marginX: 'auto',
         position: 'relative',
         zIndex: 2,
+        cursor: 'pointer',
     },
 };
 

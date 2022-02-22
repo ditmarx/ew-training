@@ -5,7 +5,8 @@ const styles = {
         backgroundImage: `url(${image})`,
         backgroundPosition: 'top center',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: 'auto 100%',
+        backgroundSize: 'cover', //'auto 100%',
+        marginBottom: -11.8,
     },
     innerBox: {
         maxWidth: 1440,
@@ -23,7 +24,7 @@ const styles = {
     },
     button: {
 
-    }
+    },
 };
 
 export default styles;

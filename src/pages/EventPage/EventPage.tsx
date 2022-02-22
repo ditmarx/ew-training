@@ -1,8 +1,8 @@
 import PageLayout from '../../components/containers/PageLayout';
 import MainSection from '../../components/containers/MainSection';
-import EventHero from '../../components/containers/EventHero';
+import EventHero from '../../components/containers/Events/EventHero';
 import YoutubeEmbed from '../../components/common/YoutubeEmbed';
-import EventRelatedInfo from '../../components/common/EventRelatedInfo';
+import EventRelatedInfo from '../../components/containers/Events/EventRelatedInfo';
 import RecentEvents from '../../components/common/RecentEvents';
 
 const EventPage = () => {
