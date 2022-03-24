@@ -9,3 +9,9 @@ const ONE_REM = 16;
 export const pixelsToRems = (px: number): string => {
     return `${(px / ONE_REM).toFixed(3)}rem`;
 };
+
+export const getYoutubeIdFromUrl = (url: string) => {
+    const idRegExp = /v=(.+)$/;
+    const result = url?.match(idRegExp);
+    return result?.[1];
+};

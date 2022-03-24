@@ -1,8 +1,10 @@
 import { Box, Grid, Typography } from '@mui/material';
+import { useGetUpcomingLaunchesQuery } from 'api';
 import LaunchCard from './LaunchCard';
 import styles from './LaunchesOverview.styles';
 
 const LaunchesOverview = () => {
+    const { data: launches } = useGetUpcomingLaunchesQuery(0);
     return (
         <Box>
             {/* Section title */}
@@ -22,9 +24,9 @@ const LaunchesOverview = () => {
                 justifyContent="center"
                 sx={styles.grid}
             >
-                {new Array(6).fill('').map((card, idx) => (
+                {launches?.map((launch, idx) => (
                     <Grid item xs={12} sm={8} md={6} key={idx}>
-                        <LaunchCard />
+                        <LaunchCard data={launch}/>
                     </Grid>
                 ))}
             </Grid>

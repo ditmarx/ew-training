@@ -3,7 +3,6 @@ import HomePage from '../pages/HomePage';
 import EventPage from '../pages/EventPage';
 import LaunchPage from '../pages/LaunchPage';
 import RocketPage from '../pages/RocketPage';
-import About from '../pages/About';
 import NotFound from '../pages/NotFound';
 
 // const Home = lazy(() => import('../pages/Home'));
@@ -16,20 +15,16 @@ const paths = [
         element: <HomePage />,
     },
     {
-        path: '/event',
+        path: '/event/:id',
         element: <EventPage />,
     },
     {
-        path: '/launch',
+        path: '/launch/:id',
         element: <LaunchPage />,
     },
     {
-        path: '/rocket',
+        path: '/rocket/:id',
         element: <RocketPage />,
-    },
-    {
-        path: '/about',
-        element: <About />,
     },
     {
         path: '*',

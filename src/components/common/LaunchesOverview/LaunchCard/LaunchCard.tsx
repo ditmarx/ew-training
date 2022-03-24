@@ -1,18 +1,20 @@
+import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 import Chip from '../../../ui/Chip';
 import styles from './LaunchCard.styles';
+import LaunchCardProps from './LaunchCard.types';
 
-const LaunchCard = () => {
+const LaunchCard: FC<LaunchCardProps> = ({ data }) => {
     const navigate = useNavigate();
-    const navToLaunchPage = () => navigate('/launch');
+    const navToLaunchPage = () => navigate(`/launch/${data.id}`);
 
     return (
         <Card variant="outlined" sx={styles.card}>
             <CardMedia
                 component="img"
                 height="264"
-                image="/static/images/cards/contemplative-reptile.jpg"
+                image={data.imgUrl}
                 alt=""
                 sx={styles.image}
                 onClick={navToLaunchPage}
@@ -22,14 +24,14 @@ const LaunchCard = () => {
                     gradient
                     sx={styles.chip}
                 >
-                    Dec. 6, 2020, 6:17 p.m.
+                    {data.date}
                 </Chip>
                 <Typography
                     variant="body1_700"
                     sx={styles.title}
                     onClick={navToLaunchPage}
                 >
-                    Long March 3B/E | Gaofen 14
+                    {data.title}
                 </Typography>
             </CardContent>
         </Card>

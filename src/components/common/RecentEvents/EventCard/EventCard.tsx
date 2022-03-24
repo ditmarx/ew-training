@@ -5,9 +5,9 @@ import Chip from '../../../ui/Chip';
 import styles from './EventCard.styles';
 import EventCardProps from './EventCard.types';
 
-const EventCard: FC<EventCardProps> = ({ text }) => {
+const EventCard: FC<EventCardProps> = ({ data }) => {
     const navigate = useNavigate();
-    const navToEventPage = () => navigate('/event');
+    const navToEventPage = () => navigate(`/event/${data.id}`);
 
     return (
         <Card
@@ -17,21 +17,22 @@ const EventCard: FC<EventCardProps> = ({ text }) => {
             <CardMedia
                 component="img"
                 height="264"
-                image="/static/images/cards/contemplative-reptile.jpg"
+                image={data.imgUrl}
                 alt=""
+                loading="lazy"
                 onClick={navToEventPage}
                 sx={{ '&:hover': { cursor: 'pointer' } }}
             />
             <CardContent sx={styles.content}>
                 <Chip sx={styles.chip}>
-                    {text}
+                    {data.date}
                 </Chip>
                 <Typography
                     variant="body1_700"
                     onClick={navToEventPage}
                     sx={{ '&:hover': { cursor: 'pointer' } }}
                 >
-                    Falcon 9 Block 5 | Dragon CRS-2 SpX-21
+                    {data.title}
                 </Typography>
             </CardContent>
         </Card>

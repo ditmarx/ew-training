@@ -1,4 +1,4 @@
-import { useCallback, /*useEffect,*/ useState } from "react";
+import { useCallback, useState } from "react";
 import { Box, Button, Typography } from '@mui/material';
 import SwiperCore, { Navigation, Virtual } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -6,14 +6,15 @@ import "swiper/css";
 import ArrowIcon from '../../ui/ArrowIcon';
 import EventCard from './EventCard';
 import styles from './RecentEvents.styles';
-import slides from './__mocks__';
+
+import { useGetUpcomingEventsQuery } from '../../../api';
 
 const RecentEvents = () => {
     const [swiper, setSwiper] = useState<SwiperCore>();
     const slideToPrev = useCallback(() => swiper?.slidePrev(), [swiper]);
     const slideToNext = useCallback(() => swiper?.slideNext(), [swiper]);
 
-    // useEffect(() => console.log(swiper), [swiper]);
+    const { data: events } = useGetUpcomingEventsQuery(0);
 
     return (
         <Box>
@@ -38,17 +39,18 @@ const RecentEvents = () => {
             {/* Event Carousel */}
             <Swiper
                 modules={[Navigation, Virtual]}
-                virtual
+                // virtual
                 slidesPerView={3}
                 spaceBetween={30}
                 // breakpoints={styles.swiperBreakpoints}
                 onSwiper={setSwiper}
             >
-                {slides.map((slide, idx) => (
-                    <SwiperSlide key={idx} virtualIndex={idx}>
-                        <EventCard
-                            text={slide}
-                        />
+                {events?.map((event, idx) => (
+                    <SwiperSlide
+                        key={idx}
+                        // virtualIndex={idx}
+                    >
+                        <EventCard data={event} />
                     </SwiperSlide>
                 ))}
             </Swiper>

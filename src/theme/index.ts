@@ -130,6 +130,4 @@ theme.typography.caption = {
     [theme.breakpoints.down('sm')]: { fontSize: pixelsToRems(15) },
 };
 
-console.log(theme);
-
 export default theme;
