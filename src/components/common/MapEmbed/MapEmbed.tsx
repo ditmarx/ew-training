@@ -1,13 +1,10 @@
+import { FC } from 'react';
 import { Box } from '@mui/material';
 import { GoogleMap, useLoadScript, Marker, } from '@react-google-maps/api';
 import styles from './MapEmbed.styles';
+import MapEmbedProps from './MapEmbed.types';
 
-const center = {
-    lat: 46.9708296,
-    lng: 31.9894319,
-};
-
-const LaunchMap = () => {
+const MapEmbed: FC<MapEmbedProps> = ({ center }) => {
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY ?? '',
     });
@@ -28,7 +25,7 @@ const LaunchMap = () => {
                 mapContainerStyle={styles.mapContainer}
                 clickableIcons={true}
                 center={center}
-                zoom={12}
+                zoom={8}
             >
                 <Marker
                     onLoad={console.log}
@@ -39,4 +36,4 @@ const LaunchMap = () => {
     );
 };
 
-export default LaunchMap;
+export default MapEmbed;

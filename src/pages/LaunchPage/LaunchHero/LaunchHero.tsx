@@ -1,10 +1,10 @@
+import { FC } from 'react';
 import { Box, Typography } from '@mui/material';
 import Countdown from '../Countdown';
 import styles from './LaunchHero.styles';
+import LaunchHeroProps from './LaunchHero.types';
 
-const LaunchHero = () => {
-    const dateMock = Number(new Date()) + 10000;
-
+const LaunchHero: FC<LaunchHeroProps> = ({ launch }) => {
     return (
         <Box
             component="section"
@@ -15,7 +15,7 @@ const LaunchHero = () => {
                     variant="h1"
                     sx={styles.title}
                 >
-                    Falcon 9 Block 5 | Dragon CRS-2 SpX-21
+                    {launch.title}
                 </Typography>
                 <Typography
                     variant="body1_700"
@@ -24,7 +24,7 @@ const LaunchHero = () => {
                     Go for Launch
                 </Typography>
                 <Countdown
-                    date={dateMock}
+                    date={launch.date}
                     sx={styles.countdown}
                 />
             </Box>

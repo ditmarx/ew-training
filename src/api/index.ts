@@ -5,7 +5,8 @@ import {
     EventDataFromApi,
     EventDetailsFromApi,
     LaunchesDataFromApi,
-    LaunchDataFromApi
+    LaunchDataFromApi,
+    LaunchDetailsFromApi,
 } from './types';
 
 export const api = createApi({
@@ -62,7 +63,28 @@ export const api = createApi({
         }),
         getLaunchDetails: builder.query({
             query: (id: string) => ({ url: `/launch/${id}` }),
+            transformResponse: (response: LaunchDetailsFromApi) => {
+                console.log(response);
+                return ({
+                    id: response.id,
+                    title: response.name,
+                    date: Number(new Date(response.net)),
+                    videoUrl: undefined,
+                    pad: {
+                        lat: parseFloat(response.pad.latitude),
+                        lng: parseFloat(response.pad.longitude),
+                    },
+                    rocket: {
+                        id: response.rocket.configuration.id,
+                        name: response.rocket.configuration.full_name,
+                        family: response.rocket.configuration.family,
+                        variant: response.rocket.configuration.variant,
+                        description: response.rocket.configuration.description,
+                    },
+                });
+            },
         }),
+
         getRocketDetails: builder.query({
             query: (id: string) => ({ url: `/config/launcher/${id}` }),
         }),

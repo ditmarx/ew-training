@@ -34,3 +34,22 @@ export type LaunchDataFromApi = {
         }
     };
 };
+
+export type LaunchDetailsFromApi = {
+    id: string,
+    name: string,
+    net: string,
+    pad: {
+        latitude: string,
+        longitude: string,
+    },
+    rocket: {
+        configuration: {
+            id: number,
+            full_name: string,
+            family: string,
+            variant: string,
+            description: string,
+        },
+    },
+};
