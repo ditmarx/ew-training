@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import Button from '../../ui/Button';
+import Button from '../../../components/ui/Button';
 import styles from './HomeHero.styles';
 
 const HomeHero = () => {

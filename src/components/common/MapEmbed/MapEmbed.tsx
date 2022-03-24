@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { GoogleMap, useLoadScript, Marker, } from '@react-google-maps/api';
-import styles from './LaunchMap.styles';
+import styles from './MapEmbed.styles';
 
 const center = {
     lat: 46.9708296,

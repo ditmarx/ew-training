@@ -1,7 +1,7 @@
 import PageLayout from '../../components/containers/PageLayout';
 import MainSection from '../../components/containers/MainSection';
-import RocketHero from '../../components/containers/Rocket/RocketHero';
-import RocketDetails from '../../components/common/RocketDetails';
+import RocketHero from './RocketHero';
+import RocketDetails from './RocketDetails';
 
 const RocketPage = () => {
     return (

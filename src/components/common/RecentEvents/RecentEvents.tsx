@@ -47,10 +47,10 @@ const RecentEvents = () => {
             >
                 {events?.map((event, idx) => (
                     <SwiperSlide
-                        key={idx}
+                        key={event.id}
                         // virtualIndex={idx}
                     >
-                        <EventCard data={event} />
+                        <EventCard event={event} />
                     </SwiperSlide>
                 ))}
             </Swiper>

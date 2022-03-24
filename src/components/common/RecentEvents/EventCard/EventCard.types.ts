@@ -1,4 +1,4 @@
-import { EventDataFromApi } from '../../../../api';
+import { EventDataFromApi } from 'api/types';
 
 type EventData = {
     id: EventDataFromApi['id'];
@@ -8,7 +8,7 @@ type EventData = {
 };
 
 type EventCardProps = {
-    data: EventData;
+    event: EventData;
 };
 
 export default EventCardProps;

@@ -10,8 +10,15 @@ export const pixelsToRems = (px: number): string => {
     return `${(px / ONE_REM).toFixed(3)}rem`;
 };
 
-export const getYoutubeIdFromUrl = (url: string) => {
-    const idRegExp = /v=(.+)$/;
-    const result = url?.match(idRegExp);
+export const getYoutubeIdFromUrl = (url: string | undefined) => {
+    const regExp = /v=(.+)$/;
+    const result = url?.match(regExp);
     return result?.[1];
 };
+
+export const formatDate = (dateFromApi: string) => (
+    new Date(dateFromApi).toLocaleString('en-us', {
+        dateStyle: 'medium',
+        timeStyle: 'short'
+    })
+);

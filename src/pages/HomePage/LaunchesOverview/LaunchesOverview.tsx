@@ -24,9 +24,15 @@ const LaunchesOverview = () => {
                 justifyContent="center"
                 sx={styles.grid}
             >
-                {launches?.map((launch, idx) => (
-                    <Grid item xs={12} sm={8} md={6} key={idx}>
-                        <LaunchCard data={launch}/>
+                {launches?.map((launch) => (
+                    <Grid
+                        item
+                        xs={12}
+                        sm={8}
+                        md={6}
+                        key={launch.id}
+                    >
+                        <LaunchCard launch={launch}/>
                     </Grid>
                 ))}
             </Grid>

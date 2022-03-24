@@ -1,8 +1,8 @@
 import PageLayout from '../../components/containers/PageLayout';
 import MainSection from '../../components/containers/MainSection';
-import HomeHero from '../../components/containers/HomeHero';
+import HomeHero from './HomeHero';
 import RecentEvents from '../../components/common/RecentEvents';
-import LaunchesOverview from '../../components/common/LaunchesOverview';
+import LaunchesOverview from './LaunchesOverview';
 
 const HomePage = () => {
     return (

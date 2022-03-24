@@ -20,6 +20,11 @@ const styles = {
         marginBottom: 1.5,
         marginTop: 2,
     },
+    pointerHover: {
+        '&:hover': { 
+            cursor: 'pointer',
+        },
+    },
 };
 
 export default styles;

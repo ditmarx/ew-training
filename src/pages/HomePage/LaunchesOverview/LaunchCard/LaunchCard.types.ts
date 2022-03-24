@@ -1,4 +1,4 @@
-import { LaunchDataFromApi } from '../../../../api';
+import { LaunchDataFromApi } from 'api/types';
 
 type LaunchData = {
     id: LaunchDataFromApi['id'];
@@ -8,7 +8,7 @@ type LaunchData = {
 };
 
 type LaunchCardProps = {
-    data: LaunchData;
+    launch: LaunchData;
 };
 
 export default LaunchCardProps;

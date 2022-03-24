@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import Countdown from '../../common/Countdown';
+import Countdown from '../Countdown';
 import styles from './LaunchHero.styles';
 
 const LaunchHero = () => {

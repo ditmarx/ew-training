@@ -1,9 +1,11 @@
+import { FC } from 'react';
 import { Box, Typography } from '@mui/material';
-import Button from '../../../ui/Button';
-import Chip from '../../../ui/Chip';
+import Button from '../../../components/ui/Button';
+import Chip from '../../../components/ui/Chip';
 import styles from './EventHero.styles';
+import EventHeroProps from './EventHero.types';
 
-const HomeHero = () => {
+const EventHero: FC<EventHeroProps> = ({ event }) => {
     return (
         <Box
             component="section"
@@ -14,18 +16,16 @@ const HomeHero = () => {
                     variant="h1"
                     sx={styles.title}
                 >
-                    CRS-21 Dragon Docking
+                    {event.title}
                 </Typography>
                 <Chip sx={styles.chip}>
-                    Dec. 6, 2020, 6:17 p.m.
+                    {event.date}
                 </Chip>
                 <Typography
                     variant="body2"
                     sx={styles.text}
                 >
-                    Following its launch atop a Falcon 9, the CRS-21 Dragon will
-                    autonomously dock to the ISS, bringing crew supplies as well
-                    as experiments.
+                    {event.description}
                 </Typography>
                 <Button variant="contained">
                     Read On Site
@@ -35,4 +35,4 @@ const HomeHero = () => {
     );
 };
 
-export default HomeHero;
+export default EventHero;

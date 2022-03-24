@@ -5,9 +5,9 @@ import Chip from '../../../ui/Chip';
 import styles from './EventCard.styles';
 import EventCardProps from './EventCard.types';
 
-const EventCard: FC<EventCardProps> = ({ data }) => {
+const EventCard: FC<EventCardProps> = ({ event }) => {
     const navigate = useNavigate();
-    const navToEventPage = () => navigate(`/event/${data.id}`);
+    const navToEventPage = () => navigate(`/event/${event.id}`);
 
     return (
         <Card
@@ -17,22 +17,22 @@ const EventCard: FC<EventCardProps> = ({ data }) => {
             <CardMedia
                 component="img"
                 height="264"
-                image={data.imgUrl}
+                image={event.imgUrl}
                 alt=""
                 loading="lazy"
                 onClick={navToEventPage}
-                sx={{ '&:hover': { cursor: 'pointer' } }}
+                sx={styles.pointerHover}
             />
             <CardContent sx={styles.content}>
                 <Chip sx={styles.chip}>
-                    {data.date}
+                    {event.date}
                 </Chip>
                 <Typography
                     variant="body1_700"
                     onClick={navToEventPage}
-                    sx={{ '&:hover': { cursor: 'pointer' } }}
+                    sx={styles.pointerHover}
                 >
-                    {data.title}
+                    {event.title}
                 </Typography>
             </CardContent>
         </Card>

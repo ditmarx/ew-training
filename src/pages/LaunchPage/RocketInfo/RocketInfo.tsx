@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
-import Button from '../../ui/Button';
-import InfoItem from '../../ui/InfoItem';
+import Button from '../../../components/ui/Button';
+import InfoItem from '../../../components/ui/InfoItem';
 import styles from './RocketInfo.styles';
 
 const RocketInfo = () => {

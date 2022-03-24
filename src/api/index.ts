@@ -1,40 +1,12 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
-type EventsDataFromApi = {
-    count: number;
-    results: EventDataFromApi[];
-};
-
-export type EventDataFromApi = {
-    id: number;
-    name: string;
-    date: string;
-    feature_image: string;
-};
-
-type LaunchesDataFromApi = {
-    count: number;
-    results: LaunchDataFromApi[];
-};
-
-export type LaunchDataFromApi = {
-    id: string;
-    image_url: string;
-    name: string;
-    net: string;
-    rocket: {
-        configuration: {
-            image_url: string;
-        }
-    };
-};
-
-const formatDate = (dateFromApi: string) => (
-    new Date(dateFromApi).toLocaleString('en-us', {
-        dateStyle: 'medium',
-        timeStyle: 'short'
-    })
-);
+import { formatDate } from 'utils/helper';
+import {
+    EventsDataFromApi,
+    EventDataFromApi,
+    EventDetailsFromApi,
+    LaunchesDataFromApi,
+    LaunchDataFromApi
+} from './types';
 
 export const api = createApi({
     reducerPath: 'api',
@@ -78,6 +50,15 @@ export const api = createApi({
         }),
         getEventDetails: builder.query({
             query: (id: string) => ({ url: `/event/${id}` }),
+            transformResponse: (response: EventDetailsFromApi) => {
+                return ({
+                    id: response.id,
+                    title: response.name,
+                    date: formatDate(response.date),
+                    description: response.description,
+                    videoUrl: response.video_url,
+                });
+            },
         }),
         getLaunchDetails: builder.query({
             query: (id: string) => ({ url: `/launch/${id}` }),
