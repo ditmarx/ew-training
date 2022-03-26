@@ -1,6 +1,5 @@
 import { launchesApi } from '..';
 import { LaunchesDataFromApi, LaunchDataFromApi, LaunchDetailsFromApi } from './types';
-import { formatDate } from 'utils/helper';
 
 export const extendedLaunchesApi = launchesApi.injectEndpoints({
     endpoints: (builder) => ({
@@ -18,7 +17,7 @@ export const extendedLaunchesApi = launchesApi.injectEndpoints({
                     return ({
                         id: item.id,
                         title: item.name,
-                        date: formatDate(item.net),
+                        date: item.net,
                         imgUrl,
                     });
                 });
@@ -34,7 +33,7 @@ export const extendedLaunchesApi = launchesApi.injectEndpoints({
                 return ({
                     id: response.id,
                     title: response.name,
-                    date: Number(new Date(response.net)),
+                    date: response.net,
                     videoUrl: undefined,
                     pad: {
                         lat: parseFloat(response.pad.latitude),

@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
+import dayjs from 'dayjs';
+import { dateFormat } from 'utils/helper';
 import Chip from '../../../../components/ui/Chip';
 import styles from './LaunchCard.styles';
 import LaunchCardProps from './LaunchCard.types';
@@ -24,7 +26,7 @@ const LaunchCard: FC<LaunchCardProps> = ({ launch }) => {
                     gradient
                     sx={styles.chip}
                 >
-                    {launch.date}
+                    {dayjs(launch.date).format(dateFormat)}
                 </Chip>
                 <Typography
                     variant="body1_700"

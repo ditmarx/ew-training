@@ -1,6 +1,6 @@
 type LaunchDetails = {
     title: string;
-    date: number;
+    date: string;
 };
 
 type LaunchHeroProps = {

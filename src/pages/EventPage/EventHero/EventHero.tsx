@@ -1,5 +1,7 @@
 import { FC } from 'react';
 import { Box, Typography } from '@mui/material';
+import dayjs from 'dayjs';
+import { dateFormat } from 'utils/helper';
 import Button from '../../../components/ui/Button';
 import Chip from '../../../components/ui/Chip';
 import styles from './EventHero.styles';
@@ -19,7 +21,7 @@ const EventHero: FC<EventHeroProps> = ({ event }) => {
                     {event.title}
                 </Typography>
                 <Chip sx={styles.chip}>
-                    {event.date}
+                    {dayjs(event.date).format(dateFormat)}
                 </Chip>
                 <Typography
                     variant="body2"

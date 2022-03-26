@@ -16,9 +16,4 @@ export const getYoutubeIdFromUrl = (url: string | undefined) => {
     return result?.[1];
 };
 
-export const formatDate = (dateFromApi: string) => (
-    new Date(dateFromApi).toLocaleString('en-us', {
-        dateStyle: 'medium',
-        timeStyle: 'short'
-    })
-);
+export const dateFormat = 'MMM D, YYYY, h:mm A';

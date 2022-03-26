@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardMedia, CardContent, Typography } from '@mui/material';
+import dayjs from 'dayjs';
+import { dateFormat } from 'utils/helper';
 import Chip from '../../../ui/Chip';
 import styles from './EventCard.styles';
 import EventCardProps from './EventCard.types';
@@ -25,7 +27,7 @@ const EventCard: FC<EventCardProps> = ({ event }) => {
             />
             <CardContent sx={styles.content}>
                 <Chip sx={styles.chip}>
-                    {event.date}
+                    {dayjs(event.date).format(dateFormat)}
                 </Chip>
                 <Typography
                     variant="body1_700"

@@ -1,6 +1,5 @@
 import { eventsApi } from '..';
 import { EventsDataFromApi, EventDataFromApi, EventDetailsFromApi } from './types';
-import { formatDate } from 'utils/helper';
 
 export const extendedEventsApi = eventsApi.injectEndpoints({
     endpoints: (builder) => ({
@@ -15,7 +14,7 @@ export const extendedEventsApi = eventsApi.injectEndpoints({
                 return response.results?.map((item: EventDataFromApi) => ({
                     id: item.id,
                     title: item.name,
-                    date: formatDate(item.date),
+                    date: item.date,
                     imgUrl: item.feature_image,
                 }));
             },
@@ -28,7 +27,7 @@ export const extendedEventsApi = eventsApi.injectEndpoints({
                 return ({
                     id: response.id,
                     title: response.name,
-                    date: formatDate(response.date),
+                    date: response.date,
                     description: response.description,
                     videoUrl: response.video_url,
                 });
