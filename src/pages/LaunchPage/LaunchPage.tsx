@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { useGetLaunchDetailsQuery } from 'api';
+import { useGetLaunchDetailsQuery } from 'api/launches';
 import { getYoutubeIdFromUrl } from 'utils/helper';
 import PageLayout from '../../components/containers/PageLayout';
 import MainSection from '../../components/containers/MainSection';

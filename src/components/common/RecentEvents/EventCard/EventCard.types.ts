@@ -1,4 +1,4 @@
-import { EventDataFromApi } from 'api/types';
+import { EventDataFromApi } from 'api/events/types';
 
 type EventData = {
     id: EventDataFromApi['id'];

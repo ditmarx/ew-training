@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { useGetEventDetailsQuery } from 'api';
+import { useGetEventDetailsQuery } from 'api/events';
 import { getYoutubeIdFromUrl } from 'utils/helper';
 import PageLayout from '../../components/containers/PageLayout';
 import MainSection from '../../components/containers/MainSection';

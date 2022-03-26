@@ -3,11 +3,11 @@ import { Box, Button, Typography } from '@mui/material';
 import SwiperCore, { Navigation, Virtual } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { useGetUpcomingEventsQuery } from 'api/events';
 import ArrowIcon from '../../ui/ArrowIcon';
 import EventCard from './EventCard';
 import styles from './RecentEvents.styles';
 
-import { useGetUpcomingEventsQuery } from '../../../api';
 
 const RecentEvents = () => {
     const [swiper, setSwiper] = useState<SwiperCore>();

@@ -1,13 +1,18 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
-import { api } from '../api';
+import { eventsApi, launchesApi, rocketsApi } from '../api';
 
 const store = configureStore({
     reducer: {
-        [api.reducerPath]: api.reducer,
+        [eventsApi.reducerPath]: eventsApi.reducer,
+        [launchesApi.reducerPath]: launchesApi.reducer,
+        [rocketsApi.reducerPath]: rocketsApi.reducer,
     },
-    middleware: (getDefaultMiddleware) => 
-        getDefaultMiddleware().concat(api.middleware),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(
+        eventsApi.middleware,
+        launchesApi.middleware,
+        rocketsApi.middleware,
+    ),
 });
 
 export default store;

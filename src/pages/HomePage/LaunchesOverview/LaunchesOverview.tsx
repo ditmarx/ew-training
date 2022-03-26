@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from '@mui/material';
-import { useGetUpcomingLaunchesQuery } from 'api';
+import { useGetUpcomingLaunchesQuery } from 'api/launches';
 import LaunchCard from './LaunchCard';
 import styles from './LaunchesOverview.styles';
 

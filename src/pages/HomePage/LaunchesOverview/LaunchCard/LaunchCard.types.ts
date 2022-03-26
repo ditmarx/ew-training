@@ -1,4 +1,4 @@
-import { LaunchDataFromApi } from 'api/types';
+import { LaunchDataFromApi } from 'api/launches/types';
 
 type LaunchData = {
     id: LaunchDataFromApi['id'];
