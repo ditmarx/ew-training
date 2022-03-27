@@ -5,7 +5,7 @@ export const extendedEventsApi = eventsApi.injectEndpoints({
     endpoints: (builder) => ({
         getUpcomingEvents: builder.query({
             query: (page: number = 0) => ({
-                url: '/event/upcoming/',
+                url: 'event/upcoming/',
                 params: {
                     offset: page * 10,
                 },
@@ -21,7 +21,7 @@ export const extendedEventsApi = eventsApi.injectEndpoints({
         }),
         getEventDetails: builder.query({
             query: (id: string) => ({
-                url: `/event/${id}`,
+                url: `event/${id}/`,
             }),
             transformResponse: (response: EventDetailsFromApi) => {
                 return ({

@@ -4,7 +4,7 @@ export const extendedRocketsApi = rocketsApi.injectEndpoints({
     endpoints: (builder) => ({
         getRocketDetails: builder.query({
             query: (id: string) => ({
-                url: `/config/launcher/${id}`,
+                url: `config/launcher/${id}/`,
             }),
         }),
     }),

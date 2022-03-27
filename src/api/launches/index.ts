@@ -5,13 +5,14 @@ export const extendedLaunchesApi = launchesApi.injectEndpoints({
     endpoints: (builder) => ({
         getUpcomingLaunches: builder.query({
             query: (page: number = 0) => ({
-                url: '/launch/upcoming/',
+                url: 'launch/upcoming/',
                 params: {
                     mode: 'detailed',
                     offset: page * 10,
                 },
             }),
             transformResponse: (response: LaunchesDataFromApi) => {
+                console.log(response);
                 return response.results.map((item: LaunchDataFromApi) => {
                     const imgUrl = item.image_url ?? item.rocket.configuration.image_url;
                     return ({
@@ -25,7 +26,7 @@ export const extendedLaunchesApi = launchesApi.injectEndpoints({
         }),
         getLaunchDetails: builder.query({
             query: (id: string) => ({
-                url: `/launch/${id}`,
+                url: `launch/${id}/`,
             }),
             transformResponse: (response: LaunchDetailsFromApi) => {
                 console.log(response);
