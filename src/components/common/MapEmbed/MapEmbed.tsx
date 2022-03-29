@@ -9,6 +9,8 @@ const MapEmbed: FC<MapEmbedProps> = ({ center }) => {
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY ?? '',
     });
 
+    if (!center) return null;
+
     if (loadError) {
         return <>Map cannot be loaded right now, sorry.</>
     }

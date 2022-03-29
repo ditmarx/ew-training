@@ -1,16 +1,17 @@
+import { FC } from 'react';
 import { Box, Typography } from '@mui/material';
-import Chip from 'components/ui/Chip';
-import InfoItem from 'components/ui/InfoItem';
-
+import { Chip, InfoItem } from 'components/ui';
 import styles from './RocketDetails.styles';
-import { tableConfig } from './RocketDetails.utils';
-import rocketData from './__mocks__'
+import RocketDetailsProps from './RocketDetails.types';
+import { getRocketStats, tableConfig } from './RocketDetails.utils';
 
-const RocketDetails = () => {
+const RocketDetails: FC<RocketDetailsProps> = ({ rocket }) => {
+    const rocketStats = getRocketStats(rocket);
+
     return (
         <Box>
             <Box sx={styles.chips}>
-                {rocketData.chips.map((chip) => (
+                {rocketStats.chips.map((chip) => (
                     <Chip
                         gradient={chip.gradient}
                         key={chip.text}
@@ -32,10 +33,11 @@ const RocketDetails = () => {
                             {column.title}
                         </Typography>
                         <Box sx={styles.columnItems}>
-                            {rocketData[column.dataKey].map((item) => (
+                            {rocketStats[column.dataKey].map((item) => (
                                 <InfoItem
                                     term={item.term}
                                     value={item.value}
+                                    units={item.units}
                                     vertical
                                     key={item.term}
                                 />

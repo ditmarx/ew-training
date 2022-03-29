@@ -1,14 +1,7 @@
-import { EventDataFromApi } from 'api/events/types';
-
-type EventData = {
-    id: EventDataFromApi['id'];
-    imgUrl: EventDataFromApi['feature_image'];
-    date: EventDataFromApi['date'];
-    title: EventDataFromApi['name'];
-};
+import { EventListItem } from 'api/events/types';
 
 type EventCardProps = {
-    event: EventData;
+    event: EventListItem;
 };
 
 export default EventCardProps;

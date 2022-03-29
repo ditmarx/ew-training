@@ -3,7 +3,15 @@ import { Box } from '@mui/material';
 import styles from './InfoItem.styles';
 import InfoItemProps from './InfoItem.types';
 
-const InfoItem: FC<InfoItemProps> = ({ term, value, vertical, centered, sx, ...props }) => {
+const InfoItem: FC<InfoItemProps> = ({
+    term, value, units, vertical, centered, sx, ...props
+}) => {
+
+    let textValue = '-';
+    if (value || (typeof value === 'number')) {
+        textValue = `${value}`;
+        if (units) textValue += ` ${units}`;
+    }
 
     return (
         <Box
@@ -17,11 +25,12 @@ const InfoItem: FC<InfoItemProps> = ({ term, value, vertical, centered, sx, ...p
         >
             {vertical ? (
                 <>
-                    {term}<br /><b>{value}</b>
+                    {term}<br />
+                    <b>{textValue}</b>
                 </>
             ) : (
                 <>
-                    <b>{`${term}:`}</b> {value}
+                    <b>{`${term}:`}</b> {textValue}
                 </>
             )}
         </Box>

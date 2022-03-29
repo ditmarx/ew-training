@@ -8,7 +8,6 @@ import ArrowIcon from '../../ui/ArrowIcon';
 import EventCard from './EventCard';
 import styles from './RecentEvents.styles';
 
-
 const RecentEvents = () => {
     const [swiper, setSwiper] = useState<SwiperCore>();
     const slideToPrev = useCallback(() => swiper?.slidePrev(), [swiper]);

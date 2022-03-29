@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 
-const useCountdownTimer = (date?: number) => {
+const useCountdownTimer = (date?: Date) => {
     const [timeLeft, setTimeLeft] = useState<number>();
 
     useEffect(() => {
         if (date) {
             const timer = setInterval(() => {
-                const diff = date - Date.now();
+                const diff = Number(date) - Date.now();
                 setTimeLeft(diff);
                 if (diff < 0) clearInterval(timer);
             }, 1000);

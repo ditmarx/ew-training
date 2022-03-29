@@ -1,14 +1,7 @@
-import { LaunchDataFromApi } from 'api/launches/types';
-
-type LaunchData = {
-    id: LaunchDataFromApi['id'];
-    imgUrl: string;
-    date: LaunchDataFromApi['net'];
-    title: LaunchDataFromApi['name'];
-};
+import { LaunchListItem } from 'api/launches/types';
 
 type LaunchCardProps = {
-    launch: LaunchData;
+    launch: LaunchListItem;
 };
 
 export default LaunchCardProps;

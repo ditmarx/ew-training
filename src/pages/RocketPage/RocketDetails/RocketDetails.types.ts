@@ -1,3 +1,11 @@
+import { RocketConfiguration } from 'api/rockets/types';
+
+type RocketDetailsProps = {
+    rocket: RocketConfiguration,
+};
+
+export default RocketDetailsProps;
+
 type ColumnType = {
     title: string;
     dataKey: 'family' | 'specifications' | 'payload';
@@ -13,7 +21,8 @@ type ChipsItemType = {
 
 type DetailsItemType = {
     term: string;
-    value: string;
+    value: string | number | null;
+    units?: string;
 };
 
 export type DetailsDataType = {

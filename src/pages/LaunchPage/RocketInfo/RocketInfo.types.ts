@@ -1,11 +1,7 @@
+import { RocketConfiguration } from 'api/rockets/types';
+
 type RocketInfoProps = {
-    rocket: {
-        id: number,
-        name: string,
-        family: string,
-        variant: string,
-        description: string,
-    },
+    rocket: RocketConfiguration,
 };
 
 export default RocketInfoProps;

@@ -15,7 +15,7 @@ const LaunchHero: FC<LaunchHeroProps> = ({ launch }) => {
                     variant="h1"
                     sx={styles.title}
                 >
-                    {launch.title}
+                    {launch.name}
                 </Typography>
                 <Typography
                     variant="body1_700"
@@ -24,7 +24,7 @@ const LaunchHero: FC<LaunchHeroProps> = ({ launch }) => {
                     Go for Launch
                 </Typography>
                 <Countdown
-                    date={Number(new Date(launch.date))}
+                    date={new Date(launch.net)}
                     sx={styles.countdown}
                 />
             </Box>

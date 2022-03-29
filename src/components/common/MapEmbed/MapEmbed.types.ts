@@ -1,5 +1,5 @@
 type MapEmbedProps = {
-    center: {
+    center?: {
         lat: number;
         lng: number;
     };

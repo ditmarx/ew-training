@@ -1,6 +1,8 @@
+import { useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import { useGetLaunchDetailsQuery } from 'api/launches';
 import { getYoutubeIdFromUrl } from 'utils/helper';
+import { setLaunchPageTitle } from 'utils/setPageTitle';
 import PageLayout from '../../components/containers/PageLayout';
 import MainSection from '../../components/containers/MainSection';
 import MapEmbed from '../../components/common/MapEmbed';
@@ -13,7 +15,14 @@ const LaunchPage = () => {
     const { id } = useParams();
     const { data: launch } = useGetLaunchDetailsQuery(id as string, { skip: !id });
 
-    const youtubeId = getYoutubeIdFromUrl(launch?.videoUrl);
+    useEffect(() => setLaunchPageTitle(id, launch), [id, launch]);
+
+    const youtubeId = getYoutubeIdFromUrl(null);
+
+    const mapCenter = launch && {
+        lat: parseFloat(launch.pad.latitude),
+        lng: parseFloat(launch.pad.longitude),
+    };
 
     return (
         <PageLayout>
@@ -24,8 +33,8 @@ const LaunchPage = () => {
                     <MainSection>
                         {youtubeId && <YoutubeEmbed id={youtubeId} />}
                         <LaunchInfo />
-                        <RocketInfo rocket={launch.rocket} />
-                        <MapEmbed center={launch.pad} />
+                        <RocketInfo rocket={launch.rocket.configuration} />
+                        <MapEmbed center={mapCenter} />
                     </MainSection>
                 </>
             )}

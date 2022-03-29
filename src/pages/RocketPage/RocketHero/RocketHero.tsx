@@ -1,41 +1,46 @@
+import { FC } from 'react';
 import { Box, Typography } from '@mui/material';
+import dayjs from 'dayjs';
+import { formatDate } from 'utils/helper';
 import styles from './RocketHero.styles';
+import RocketHeroProps from './RocketHero.types';
 
-const RocketHero = () => {
+const RocketHero: FC<RocketHeroProps> = ({ rocket }) => {
+    console.log(rocket);
+    const company = rocket.launch_service_provider;
     return (
         <Box
             component="section"
             sx={styles.outerBox}
         >
-            <Box
-                sx={styles.innerBox}
-            >
+            <Box sx={styles.innerBox}>
                 <Typography
                     variant="h1"
                     sx={styles.title}
                 >
-                    Falcon 9 Block 5
+                    {rocket.full_name}
                 </Typography>
                 <Typography
                     variant="body1"
                     sx={styles.company}
                 >
-                    SpaceX (SpX)
+                    {company.name} ({company.abbrev})
                 </Typography>
                 <Typography
                     variant="body1_800"
                     sx={styles.date}
                 >
-                    May 11, 2018
+                    {
+                        rocket.maiden_flight
+                            ? dayjs(rocket.maiden_flight).format(formatDate)
+                            : 'Date is Unknown'
+                    }
                 </Typography>
                 <Typography
                     variant="body2"
                     sx={styles.text}
                 >
-                    Falcon 9 is a two-stage rocket designed and manufactured by SpaceX
-                    for the reliable and safe transport of satellites and the Dragon
-                    spacecraft into orbit. The Block 5 variant is the fifth major
-                    interval aimed at improving upon the ability for rapid reusability.
+                    {rocket.description}
                 </Typography>
             </Box>
         </Box>

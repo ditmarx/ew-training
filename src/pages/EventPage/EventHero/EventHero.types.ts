@@ -1,8 +1,4 @@
-type EventDetails = {
-    title: string;
-    date: string;
-    description: string;
-};
+import { EventDetails } from 'api/events/types';
 
 type EventHeroProps = {
     event: EventDetails;

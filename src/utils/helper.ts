@@ -10,10 +10,11 @@ export const pixelsToRems = (px: number): string => {
     return `${(px / ONE_REM).toFixed(3)}rem`;
 };
 
-export const getYoutubeIdFromUrl = (url: string | undefined) => {
+export const getYoutubeIdFromUrl = (url?: string | null) => {
     const regExp = /v=(.+)$/;
     const result = url?.match(regExp);
     return result?.[1];
 };
 
-export const dateFormat = 'MMM D, YYYY, h:mm A';
+export const formatDateTime = 'MMM D, YYYY, h:mm a';
+export const formatDate = 'MMMM D, YYYY';

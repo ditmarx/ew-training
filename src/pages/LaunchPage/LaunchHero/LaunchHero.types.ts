@@ -1,7 +1,4 @@
-type LaunchDetails = {
-    title: string;
-    date: string;
-};
+import { LaunchDetails } from 'api/launches/types';
 
 type LaunchHeroProps = {
     launch: LaunchDetails;

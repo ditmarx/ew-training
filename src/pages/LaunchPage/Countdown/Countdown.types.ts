@@ -1,7 +1,7 @@
 import { BoxProps } from '@mui/material';
 
 type CountdownProps = {
-    date?: number;
+    date?: Date;
 } & BoxProps;
 
 export default CountdownProps;

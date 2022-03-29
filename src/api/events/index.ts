@@ -1,37 +1,24 @@
 import { eventsApi } from '..';
-import { EventsDataFromApi, EventDataFromApi, EventDetailsFromApi } from './types';
+import { EventList, EventListItem, EventDetails } from './types';
 
 export const extendedEventsApi = eventsApi.injectEndpoints({
     endpoints: (builder) => ({
-        getUpcomingEvents: builder.query({
-            query: (page: number = 0) => ({
+        getUpcomingEvents: builder.query<EventListItem[], number>({
+            query: (page = 0) => ({
                 url: 'event/upcoming/',
                 params: {
                     offset: page * 10,
                 },
             }),
-            transformResponse: (response: EventsDataFromApi) => {
-                return response.results?.map((item: EventDataFromApi) => ({
-                    id: item.id,
-                    title: item.name,
-                    date: item.date,
-                    imgUrl: item.feature_image,
-                }));
+            transformResponse: (response: EventList) => {
+                console.log('events response = ', response);
+                return response.results;
             },
         }),
-        getEventDetails: builder.query({
-            query: (id: string) => ({
+        getEventDetails: builder.query<EventDetails, string>({
+            query: (id) => ({
                 url: `event/${id}/`,
             }),
-            transformResponse: (response: EventDetailsFromApi) => {
-                return ({
-                    id: response.id,
-                    title: response.name,
-                    date: response.date,
-                    description: response.description,
-                    videoUrl: response.video_url,
-                });
-            },
         }),
     }),
 });
