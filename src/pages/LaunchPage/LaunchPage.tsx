@@ -2,7 +2,7 @@ import { useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import { useGetLaunchDetailsQuery } from 'src/api/launches';
 import { getYoutubeIdFromUrl } from 'src/utils/helper';
-import { setLaunchPageTitle } from 'src/utils/setPageTitle';
+import { setPageTitle } from 'src/utils/setPageTitle';
 import { MainSection, PageLayout } from 'src/components/containers';
 import { MapEmbed, YoutubeEmbed } from 'src/components/common';
 import LaunchHero from './LaunchHero';
@@ -13,7 +13,7 @@ const LaunchPage = () => {
     const { id } = useParams();
     const { data: launch } = useGetLaunchDetailsQuery(id as string, { skip: !id });
 
-    useEffect(() => setLaunchPageTitle(id, launch), [id, launch]);
+    useEffect(() => setPageTitle('Launch', id, launch?.name), [id, launch]);
 
     const youtubeId = getYoutubeIdFromUrl(null);
 

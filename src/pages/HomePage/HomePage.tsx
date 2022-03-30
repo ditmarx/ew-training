@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
-import { setHomePageTitle } from 'src/utils/setPageTitle';
+import { setPageTitle } from 'src/utils/setPageTitle';
 import { MainSection, PageLayout } from 'src/components/containers';
 import { RecentEvents } from 'src/components/common';
 import HomeHero from './HomeHero';
 import LaunchesOverview from './LaunchesOverview';
 
 const HomePage = () => {
-    useEffect(() => setHomePageTitle(), []);
+    useEffect(() => setPageTitle('Home'), []);
 
     return (
         <PageLayout home>

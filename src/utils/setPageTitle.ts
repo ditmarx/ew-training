@@ -1,37 +1,19 @@
-import { RocketConfiguration } from "src/api/rockets/types";
-import { LaunchListItem } from "src/api/launches/types";
-import { EventListItem } from "src/api/events/types";
+type PageType = 'Home' | 'Event' | 'Launch' | 'Rocket';
 
-export const setRocketPageTitle = (id?: string, rocket?: RocketConfiguration) => {
-    if (rocket) {
-        document.title = `Spaceflights | Rocket (${rocket.full_name})`;
-    } else if (id) {
-        document.title = `Spaceflights | Rocket (${id})`;
+export const setPageTitle = (
+    pageType: PageType,
+    id?: string,
+    titleInfo?: string
+): void => {
+    if (pageType === 'Home') {
+        document.title = 'Spaceflights App';
     } else {
-        document.title = 'Spaceflights | Rocket';
+        if (titleInfo) {
+            document.title = `Spaceflights | ${pageType} (${titleInfo})`;
+        } else if (id) {
+            document.title = `Spaceflights | ${pageType} (${id})`;
+        } else {
+            document.title = `Spaceflights | ${pageType}`;
+        }
     }
-};
-
-export const setLaunchPageTitle = (id?: string, launch?: LaunchListItem) => {
-    if (launch) {
-        document.title = `Spaceflights | Launch (${launch.name})`;
-    } else if (id) {
-        document.title = `Spaceflights | Launch (${id})`;
-    } else {
-        document.title = 'Spaceflights | Launch';
-    }
-};
-
-export const setEventPageTitle = (id?: string, event?: EventListItem) => {
-    if (event) {
-        document.title = `Spaceflights | Event (${event.name})`;
-    } else if (id) {
-        document.title = `Spaceflights | Event (${id})`;
-    } else {
-        document.title = 'Spaceflights | Event';
-    }
-};
-
-export const setHomePageTitle = () => {
-    document.title = 'Spaceflights App';
 };
