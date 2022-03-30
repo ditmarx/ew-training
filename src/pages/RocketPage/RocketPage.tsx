@@ -1,11 +1,10 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import PageLayout from '../../components/containers/PageLayout';
-import MainSection from '../../components/containers/MainSection';
+import { useGetRocketDetailsQuery } from 'src/api/rockets';
+import { setRocketPageTitle } from 'src/utils/setPageTitle';
+import { MainSection, PageLayout } from 'src/components/containers';
 import RocketHero from './RocketHero';
 import RocketDetails from './RocketDetails';
-import { useGetRocketDetailsQuery } from 'api/rockets';
-import { setRocketPageTitle } from 'utils/setPageTitle';
 
 const RocketPage = () => {
     const { id } = useParams();

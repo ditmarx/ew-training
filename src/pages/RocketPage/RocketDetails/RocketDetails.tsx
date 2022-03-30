@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Box, Typography } from '@mui/material';
-import { Chip, InfoItem } from 'components/ui';
+import { Chip, InfoItem } from 'src/components/ui';
 import styles from './RocketDetails.styles';
 import RocketDetailsProps from './RocketDetails.types';
 import { getRocketStats, tableConfig } from './RocketDetails.utils';

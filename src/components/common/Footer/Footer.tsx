@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import Logo from '../../ui/Logo';
+import Logo from 'src/components/ui/Logo';
 import styles from './Footer.styles';
 
 const Footer = () => {

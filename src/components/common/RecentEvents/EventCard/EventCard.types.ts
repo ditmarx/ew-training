@@ -1,4 +1,4 @@
-import { EventListItem } from 'api/events/types';
+import { EventListItem } from 'src/api/events/types';
 
 type EventCardProps = {
     event: EventListItem;

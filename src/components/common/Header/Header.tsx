@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { Box } from "@mui/material";
-import BackToHome from "../../ui/BackToHome";
-import Logo from '../../ui/Logo';
+import { BackToHome, Logo } from "src/components/ui";
 import styles from './Header.styles';
 import HeaderProps from './Header.types';
 

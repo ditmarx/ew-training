@@ -1,8 +1,7 @@
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
-import Button from '../../../components/ui/Button';
-import InfoItem from '../../../components/ui/InfoItem';
+import { Button, InfoItem } from 'src/components/ui';
 import styles from './RocketInfo.styles';
 import RocketInfoProps from './RocketInfo.types';
 

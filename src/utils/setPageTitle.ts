@@ -1,6 +1,6 @@
-import { RocketConfiguration } from "api/rockets/types";
-import { LaunchListItem } from "api/launches/types";
-import { EventListItem } from "api/events/types";
+import { RocketConfiguration } from "src/api/rockets/types";
+import { LaunchListItem } from "src/api/launches/types";
+import { EventListItem } from "src/api/events/types";
 
 export const setRocketPageTitle = (id?: string, rocket?: RocketConfiguration) => {
     if (rocket) {

@@ -2,8 +2,8 @@ import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardMedia, CardContent, Typography } from '@mui/material';
 import dayjs from 'dayjs';
-import { formatDateTime } from 'utils/helper';
-import Chip from '../../../ui/Chip';
+import { formatDateTime } from 'src/utils/helper';
+import { Chip } from 'src/components/ui';
 import styles from './EventCard.styles';
 import EventCardProps from './EventCard.types';
 

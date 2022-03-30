@@ -1,4 +1,4 @@
-import { RocketConfiguration } from 'api/rockets/types';
+import { RocketConfiguration } from 'src/api/rockets/types';
 
 type RocketInfoProps = {
     rocket: RocketConfiguration,

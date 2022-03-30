@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import { pixelsToRems } from '../utils/helper';
+import { pixelsToRems } from 'src/utils/helper';
 
 const theme = createTheme({
     spacing: 10,

@@ -1,12 +1,11 @@
 import { FC } from 'react';
 import { Box, Typography } from '@mui/material';
 import dayjs from 'dayjs';
-import { formatDate } from 'utils/helper';
+import { formatDate } from 'src/utils/helper';
 import styles from './RocketHero.styles';
 import RocketHeroProps from './RocketHero.types';
 
 const RocketHero: FC<RocketHeroProps> = ({ rocket }) => {
-    console.log(rocket);
     const company = rocket.launch_service_provider;
     return (
         <Box

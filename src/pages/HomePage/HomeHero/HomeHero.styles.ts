@@ -1,4 +1,4 @@
-import image from 'assets/hero-home.png';
+import image from 'src/assets/hero-home.png';
 
 const styles = {
     outerBox: {

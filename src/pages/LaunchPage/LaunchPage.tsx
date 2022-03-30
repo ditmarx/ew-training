@@ -1,12 +1,10 @@
 import { useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-import { useGetLaunchDetailsQuery } from 'api/launches';
-import { getYoutubeIdFromUrl } from 'utils/helper';
-import { setLaunchPageTitle } from 'utils/setPageTitle';
-import PageLayout from '../../components/containers/PageLayout';
-import MainSection from '../../components/containers/MainSection';
-import MapEmbed from '../../components/common/MapEmbed';
-import YoutubeEmbed from '../../components/common/YoutubeEmbed';
+import { useGetLaunchDetailsQuery } from 'src/api/launches';
+import { getYoutubeIdFromUrl } from 'src/utils/helper';
+import { setLaunchPageTitle } from 'src/utils/setPageTitle';
+import { MainSection, PageLayout } from 'src/components/containers';
+import { MapEmbed, YoutubeEmbed } from 'src/components/common';
 import LaunchHero from './LaunchHero';
 import LaunchInfo from './LaunchInfo';
 import RocketInfo from './RocketInfo';

@@ -1,6 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import Chip from 'components/ui/Chip';
-import InfoItem from 'components/ui/InfoItem';
+import { Chip, InfoItem } from 'src/components/ui';
 import styles from './EventRelatedInfo.styles';
 
 const EventRelatedInfo = () => {

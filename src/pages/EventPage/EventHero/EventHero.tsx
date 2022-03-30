@@ -1,9 +1,8 @@
 import { FC } from 'react';
 import { Box, Typography } from '@mui/material';
 import dayjs from 'dayjs';
-import { formatDateTime } from 'utils/helper';
-import Button from '../../../components/ui/Button';
-import Chip from '../../../components/ui/Chip';
+import { formatDateTime } from 'src/utils/helper';
+import { Button, Chip } from 'src/components/ui';
 import styles from './EventHero.styles';
 import EventHeroProps from './EventHero.types';
 

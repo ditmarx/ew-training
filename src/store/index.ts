@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
-import { eventsApi, launchesApi, rocketsApi } from '../api';
+import { eventsApi, launchesApi, rocketsApi } from 'src/api';
 
 const store = configureStore({
     reducer: {

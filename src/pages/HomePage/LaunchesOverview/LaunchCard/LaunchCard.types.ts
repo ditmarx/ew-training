@@ -1,4 +1,4 @@
-import { LaunchListItem } from 'api/launches/types';
+import { LaunchListItem } from 'src/api/launches/types';
 
 type LaunchCardProps = {
     launch: LaunchListItem;

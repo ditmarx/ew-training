@@ -1,8 +1,8 @@
 import { TableType, DetailsDataType } from './RocketDetails.types';
-import { ReactComponent as SvgRocketFamily } from 'assets/rocket-family.svg';
-import { ReactComponent as SvgRocketSpecs } from 'assets/rocket-specs.svg';
-import { ReactComponent as SvgRocketPayload } from 'assets/rocket-payload.svg';
-import { RocketConfiguration } from 'api/rockets/types';
+import { ReactComponent as SvgRocketFamily } from 'src/assets/rocket-family.svg';
+import { ReactComponent as SvgRocketSpecs } from 'src/assets/rocket-specs.svg';
+import { ReactComponent as SvgRocketPayload } from 'src/assets/rocket-payload.svg';
+import { RocketConfiguration } from 'src/api/rockets/types';
 
 export const tableConfig: TableType = [
     {

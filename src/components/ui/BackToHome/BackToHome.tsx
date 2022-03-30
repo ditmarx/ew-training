@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { Box, Typography } from "@mui/material";
-import ArrowIcon from '../ArrowIcon';
+import { ArrowIcon } from 'src/components/ui';
 import styles from './BackToHome.styles';
 
 const BackToHome = () => {

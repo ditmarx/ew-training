@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Box, Typography } from '@mui/material';
-import Countdown from '../Countdown';
+import Countdown from './Countdown';
 import styles from './LaunchHero.styles';
 import LaunchHeroProps from './LaunchHero.types';
 

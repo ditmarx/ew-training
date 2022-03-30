@@ -1,9 +1,9 @@
 // import { lazy } from 'react';
-import HomePage from '../pages/HomePage';
-import EventPage from '../pages/EventPage';
-import LaunchPage from '../pages/LaunchPage';
-import RocketPage from '../pages/RocketPage';
-import NotFound from '../pages/NotFound';
+import HomePage from 'src/pages/HomePage';
+import EventPage from 'src/pages/EventPage';
+import LaunchPage from 'src/pages/LaunchPage';
+import RocketPage from 'src/pages/RocketPage';
+import NotFound from 'src/pages/NotFound';
 
 // const Home = lazy(() => import('../pages/Home'));
 // const About = lazy(() => import('../pages/About'));

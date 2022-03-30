@@ -1,5 +1,5 @@
 import { alpha } from '@mui/material/styles';
-import { pixelsToRems } from '../../../utils/helper';
+import { pixelsToRems } from 'src/utils/helper';
 
 const headerHeightPx = [60, 70, 80, 90, 100];
 const headerHeightRem = headerHeightPx.map(px => pixelsToRems(px));

@@ -11,7 +11,6 @@ export const extendedEventsApi = eventsApi.injectEndpoints({
                 },
             }),
             transformResponse: (response: EventList) => {
-                console.log('events response = ', response);
                 return response.results;
             },
         }),
