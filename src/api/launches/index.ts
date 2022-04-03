@@ -6,8 +6,9 @@ export const extendedLaunchesApi = launchesApi.injectEndpoints({
         getUpcomingLaunches: builder.query<LaunchListItem[], number>({
             query: (page = 0) => ({
                 url: 'launch/upcoming/',
+                method: 'GET',
                 params: {
-                    mode: 'detailed',
+                    // mode: 'detailed',
                     offset: page * 10,
                 },
             }),

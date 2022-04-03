@@ -1,3 +1,5 @@
+import dayjs from 'dayjs';
+
 // 16px - default value for 1 rem for medium font size in a browser settings
 const ONE_REM = 16;
 
@@ -16,5 +18,14 @@ export const getYoutubeIdFromUrl = (url?: string | null) => {
     return result?.[1];
 };
 
-export const formatDateTime = 'MMM D, YYYY, h:mm a';
-export const formatDate = 'MMMM D, YYYY';
+export const createArrayOfUndef = (n: number): undefined[] => {
+    return new Array(n).fill(undefined);
+};
+
+export const showDateTime = (date: string): string => {
+    return dayjs(date).format('MMM D, YYYY, h:mm a');
+};
+
+export const showDate = (date: string): string => {
+    return dayjs(date).format('MMMM D, YYYY');
+};

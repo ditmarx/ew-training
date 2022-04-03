@@ -1,10 +1,14 @@
+import { useMemo } from 'react';
 import { Box, Grid, Typography } from '@mui/material';
 import { useGetUpcomingLaunchesQuery } from 'src/api/launches';
+import { createArrayOfUndef } from 'src/utils/helper';
 import LaunchCard from './LaunchCard';
 import styles from './LaunchesOverview.styles';
 
 const LaunchesOverview = () => {
-    const { data: launches } = useGetUpcomingLaunchesQuery(0);
+    const dummyLaunches = useMemo(() => createArrayOfUndef(4), []);
+    const { data: fetchedLaunches } = useGetUpcomingLaunchesQuery(0);
+
     return (
         <Box>
             {/* Section title */}
@@ -24,13 +28,13 @@ const LaunchesOverview = () => {
                 justifyContent="center"
                 sx={styles.grid}
             >
-                {launches?.map((launch) => (
+                {(fetchedLaunches ?? dummyLaunches).map((launch, idx) => (
                     <Grid
                         item
                         xs={12}
                         sm={8}
                         md={6}
-                        key={launch.id}
+                        key={launch?.id ?? idx}
                     >
                         <LaunchCard launch={launch}/>
                     </Grid>

@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { Box, Typography } from '@mui/material';
-import dayjs from 'dayjs';
-import { formatDate } from 'src/utils/helper';
+import { showDate } from 'src/utils/helper';
 import styles from './RocketHero.styles';
 import RocketHeroProps from './RocketHero.types';
 
@@ -31,7 +30,7 @@ const RocketHero: FC<RocketHeroProps> = ({ rocket }) => {
                 >
                     {
                         rocket.maiden_flight
-                            ? dayjs(rocket.maiden_flight).format(formatDate)
+                            ? showDate(rocket.maiden_flight)
                             : 'Date is Unknown'
                     }
                 </Typography>

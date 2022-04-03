@@ -131,3 +131,5 @@ theme.typography.caption = {
 };
 
 export default theme;
+
+export const cardBgColor = '#3F3881';

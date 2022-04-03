@@ -1,44 +1,68 @@
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Card, CardContent, CardMedia, Typography } from '@mui/material';
-import dayjs from 'dayjs';
-import { formatDateTime } from 'src/utils/helper';
+import { Box, Skeleton, Typography } from '@mui/material';
 import { Chip } from 'src/components/ui';
+import { ReactComponent as NoImgLogo } from 'src/assets/loader.svg';
+import { showDateTime } from 'src/utils/helper';
 import styles from './LaunchCard.styles';
 import LaunchCardProps from './LaunchCard.types';
 
+const LaunchCardSkeleton = () => {
+    return (
+        <Box sx={styles.cardBox}>
+            <Skeleton
+                variant="rectangular"
+                sx={styles.skeletonImage}
+            />
+            <Skeleton sx={styles.skeletonChip} />
+            <Skeleton sx={styles.skeletonText} />
+        </Box>
+    );
+};
+
 const LaunchCard: FC<LaunchCardProps> = ({ launch }) => {
     const navigate = useNavigate();
+
+    if (!launch) {
+        return <LaunchCardSkeleton />;
+    }
+
     const navToLaunchPage = () => navigate(`/launch/${launch.id}`);
 
-    const launchImgUrl = launch.image_url ?? launch.rocket.configuration.image_url;
+    const launchImgUrl =
+        launch?.image_url ??
+        launch?.rocket.configuration.image_url;
 
     return (
-        <Card variant="outlined" sx={styles.card}>
-            <CardMedia
-                component="img"
-                height="264"
-                image={launchImgUrl}
-                alt=""
-                sx={styles.image}
-                onClick={navToLaunchPage}
-            />
-            <CardContent sx={styles.content}>
-                <Chip
-                    gradient
-                    sx={styles.chip}
-                >
-                    {dayjs(launch.net).format(formatDateTime)}
-                </Chip>
-                <Typography
-                    variant="body1_700"
-                    sx={styles.title}
+        <Box sx={styles.cardBox}>
+            {!launchImgUrl ? (
+                <Box sx={styles.cardNoImage}>
+                    <NoImgLogo height="50%" />
+                </Box>
+            ) : (
+                <Box
+                    component="img"
+                    src={launchImgUrl}
+                    alt=""
+                    loading="lazy"
                     onClick={navToLaunchPage}
-                >
-                    {launch.name}
-                </Typography>
-            </CardContent>
-        </Card>
+                    sx={styles.cardImage}
+                />
+            )}
+            <Chip
+                gradient
+                sx={styles.cardDate}
+            >
+                {showDateTime(launch.net)}
+            </Chip>
+            <Typography
+                variant="body1_700"
+                onClick={navToLaunchPage}
+                sx={styles.cardText}
+            >
+                {launch.name}
+            </Typography>
+        </Box>
     );
 };
 

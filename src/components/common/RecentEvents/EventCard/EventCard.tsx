@@ -1,43 +1,59 @@
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Card, CardMedia, CardContent, Typography } from '@mui/material';
-import dayjs from 'dayjs';
-import { formatDateTime } from 'src/utils/helper';
+import { Box, Skeleton, Typography } from '@mui/material';
 import { Chip } from 'src/components/ui';
+import { ReactComponent as NoImgLogo } from 'src/assets/loader.svg';
+import { showDateTime } from 'src/utils/helper';
 import styles from './EventCard.styles';
 import EventCardProps from './EventCard.types';
 
+const EventCardSkeleton = () => {
+    return (
+        <Box sx={styles.cardBox}>
+            <Skeleton
+                variant="rectangular"
+                sx={styles.skeletonImage}
+            />
+            <Skeleton sx={styles.skeletonChip} />
+            <Skeleton sx={styles.skeletonText} />
+        </Box>
+    );
+};
+
 const EventCard: FC<EventCardProps> = ({ event }) => {
     const navigate = useNavigate();
+
+    if (!event) return <EventCardSkeleton />;
+
     const navToEventPage = () => navigate(`/event/${event.id}`);
 
     return (
-        <Card
-            variant="outlined"
-            sx={styles.card}
-        >
-            <CardMedia
-                component="img"
-                height="264"
-                image={event.feature_image}
-                alt=""
-                loading="lazy"
-                onClick={navToEventPage}
-                sx={styles.pointerHover}
-            />
-            <CardContent sx={styles.content}>
-                <Chip sx={styles.chip}>
-                    {dayjs(event.date).format(formatDateTime)}
-                </Chip>
-                <Typography
-                    variant="body1_700"
+        <Box sx={styles.cardBox}>
+            {!event.feature_image ? (
+                <Box sx={styles.cardNoImage}>
+                    <NoImgLogo height="50%" />
+                </Box>
+            ) : (
+                <Box
+                    component="img"
+                    src={event.feature_image}
+                    alt=""
+                    loading="lazy"
                     onClick={navToEventPage}
-                    sx={styles.pointerHover}
-                >
-                    {event.name}
-                </Typography>
-            </CardContent>
-        </Card>
+                    sx={styles.cardImage}
+                />
+            )}
+            <Chip sx={styles.cardDate}>
+                {showDateTime(event.date)}
+            </Chip>
+            <Typography
+                variant="body1_700"
+                onClick={navToEventPage}
+                sx={styles.cardText}
+            >
+                {event.name}
+            </Typography>
+        </Box>
     );
 };
 

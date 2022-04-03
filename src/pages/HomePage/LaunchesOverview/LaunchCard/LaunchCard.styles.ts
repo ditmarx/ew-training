@@ -1,28 +1,54 @@
+import { cardBgColor } from 'src/theme';
+
+const imageHeight = 300;
+
 const styles = {
-    card: {
-        // maxWidth: '380px',
-        backgroundColor: 'transparent',
-        border: 0,
+    skeletonImage: {
+        height: imageHeight,
+        width: '100%',
+        backgroundColor: cardBgColor,
+        marginBottom: 2,
+    },
+    skeletonChip: {
+        width: '60%',
+        backgroundColor: cardBgColor,
+    },
+    skeletonText: {
+        width: '90%',
+        backgroundColor: cardBgColor,
+    },
+    cardBox: {
         marginBottom: 5,
     },
-    image: {
-        border: 0,
+    cardImage: {
+        height: imageHeight,
+        width: '100%',
+        display: 'block' as const,
+        objectFit: 'cover' as const,
+        objectPosition: 'center' as const,
+        marginBottom: -2,
+        backgroundColor: cardBgColor,
+        cursor: 'pointer',
+    },
+    cardNoImage: {
+        height: imageHeight,
+        width: '100%',
+        display: 'flex' as const,
+        justifyContent: 'center' as const,
+        alignItems: 'center' as const,
+        marginBottom: -2,
+        backgroundColor: cardBgColor,
+        cursor: 'pointer',
+    },
+    cardDate: {
+        marginBottom: 2,
+        marginX: 'auto',
+        position: 'relative',
         zIndex: 1,
         cursor: 'pointer',
     },
-    content: {
-        padding: 0,
-    },
-    title: {
+    cardText: {
         textAlign: 'center',
-        cursor: 'pointer',
-    },
-    chip: {
-        marginBottom: 2,
-        marginTop: -2,
-        marginX: 'auto',
-        position: 'relative',
-        zIndex: 2,
         cursor: 'pointer',
     },
 };

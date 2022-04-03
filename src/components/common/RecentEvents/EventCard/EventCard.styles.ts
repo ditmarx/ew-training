@@ -1,29 +1,50 @@
+import { cardBgColor } from 'src/theme';
+
+const imageHeight = 264;
+
 const styles = {
-    card: {
-        backgroundColor: 'transparent',
-        border: 0,
+    skeletonImage: {
+        height: imageHeight,
+        width: '100%',
+        backgroundColor: cardBgColor,
+        marginBottom: 2,
+    },
+    skeletonChip: {
+        width: '60%',
+        backgroundColor: cardBgColor,
+    },
+    skeletonText: {
+        width: '90%',
+        backgroundColor: cardBgColor,
+    },
+    cardBox: {
         maxWidth: 380,
     },
-    content: {
-        padding: 0,
+    cardImage: {
+        height: imageHeight,
+        width: '100%',
+        display: 'block' as const,
+        objectFit: 'cover' as const,
+        objectPosition: 'center' as const,
+        marginBottom: 2,
+        cursor: 'pointer',
+        backgroundColor: cardBgColor,
     },
-    date: {
-        backgroundColor: '#4A00E0',
-        borderRadius: '19px',
+    cardNoImage: {
+        height: imageHeight,
+        width: '100%',
+        display: 'flex' as const,
+        justifyContent: 'center' as const,
+        alignItems: 'center' as const,
+        marginBottom: 2,
+        cursor: 'pointer',
+        backgroundColor: cardBgColor,
+    },
+    cardDate: {
         marginBottom: 1.5,
-        marginTop: 2,
-        paddingX: 3,
-        paddingY: 1,
-        width: 'fit-content',
     },
-    chip: {
-        marginBottom: 1.5,
-        marginTop: 2,
-    },
-    pointerHover: {
-        '&:hover': { 
-            cursor: 'pointer',
-        },
+    cardText: {
+        cursor: 'pointer',
     },
 };
 

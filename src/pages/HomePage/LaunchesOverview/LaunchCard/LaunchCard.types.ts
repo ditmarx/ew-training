@@ -1,7 +1,7 @@
 import { LaunchListItem } from 'src/api/launches/types';
 
 type LaunchCardProps = {
-    launch: LaunchListItem;
+    launch?: LaunchListItem;
 };
 
 export default LaunchCardProps;
