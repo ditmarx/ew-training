@@ -4,20 +4,25 @@ import { useGetEventDetailsQuery } from 'src/api/events';
 import { getYoutubeIdFromUrl } from 'src/utils/helper';
 import { setPageTitle } from 'src/utils/setPageTitle';
 import { HeroSection, MainSection, PageLayout } from 'src/components/containers';
-import { RecentEvents, YoutubeEmbed } from 'src/components/common';
+import { Loader, RecentEvents, YoutubeEmbed } from 'src/components/common';
 import EventHero from './EventHero';
 import EventRelatedInfo from './EventRelatedInfo';
 
 const EventPage = () => {
     const { id } = useParams();
-    const { data: event } = useGetEventDetailsQuery(id as string);
+    const { currentData: event, isError } = useGetEventDetailsQuery(id as string);
 
     useEffect(() => setPageTitle('Event', id, event?.name), [id, event]);
 
+    console.log('id = ', id);
+    console.log('event = ', event);
+    console.log('isError = ', isError);
+
     return (
         <PageLayout>
-            {!event && (<>Loading...</>)}
-            {event && (
+            {(isError || !event) ? (
+                <Loader isError={isError} />
+            ) : (
                 <>
                     <HeroSection imgUrl={event.feature_image}>
                         <EventHero event={event}/>
