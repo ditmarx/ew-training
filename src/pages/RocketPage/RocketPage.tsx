@@ -2,10 +2,10 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useGetRocketDetailsQuery } from 'src/api/rockets';
 import { setPageTitle } from 'src/utils/setPageTitle';
-import { HeroSection, MainSection, PageLayout } from 'src/components/containers';
+import { PageLayout } from 'src/components/containers';
 import { Loader } from 'src/components/common';
 import RocketHero from './RocketHero';
-import RocketDetails from './RocketDetails';
+import RocketMain from './RocketMain';
 
 const RocketPage = () => {
     const { id } = useParams();
@@ -19,12 +19,8 @@ const RocketPage = () => {
                 <Loader isError={isError} />
             ) : (
                 <>
-                    <HeroSection imgUrl={rocket.image_url}>
-                        <RocketHero rocket={rocket} />
-                    </HeroSection>
-                    <MainSection>
-                        <RocketDetails rocket={rocket} />
-                    </MainSection>
+                    <RocketHero rocket={rocket} />
+                    <RocketMain rocket={rocket} />
                 </>
             )}
         </PageLayout>

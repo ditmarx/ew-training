@@ -1,14 +1,11 @@
 import { useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import { useGetLaunchDetailsQuery } from 'src/api/launches';
-import { getLaunchImgUrl } from 'src/api/utils/getLaunchImgUrl';
-import { getLaunchMapCenter, getYoutubeIdFromUrl } from 'src/utils/helper';
 import { setPageTitle } from 'src/utils/setPageTitle';
-import { HeroSection, MainSection, PageLayout } from 'src/components/containers';
-import { Loader, MapEmbed, YoutubeEmbed } from 'src/components/common';
+import { PageLayout } from 'src/components/containers';
+import { Loader } from 'src/components/common';
 import LaunchHero from './LaunchHero';
-import LaunchInfo from './LaunchInfo';
-import RocketInfo from './RocketInfo';
+import LaunchMain from './LaunchMain';
 
 const LaunchPage = () => {
     const { id } = useParams();
@@ -22,15 +19,8 @@ const LaunchPage = () => {
                 <Loader isError={isError} />
             ) : (
                 <>
-                    <HeroSection imgUrl={getLaunchImgUrl(launch)}>
-                        <LaunchHero launch={launch}/>
-                    </HeroSection>
-                    <MainSection>
-                        <YoutubeEmbed id={getYoutubeIdFromUrl(null)} />
-                        <LaunchInfo />
-                        <RocketInfo rocket={launch.rocket.configuration} />
-                        <MapEmbed center={getLaunchMapCenter(launch)} />
-                    </MainSection>
+                    <LaunchHero launch={launch}/>
+                    <LaunchMain launch={launch}/>
                 </>
             )}
         </PageLayout>
