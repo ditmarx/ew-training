@@ -7,6 +7,7 @@ import styles from './LaunchHero.styles';
 import LaunchHeroProps from './LaunchHero.types';
 
 const LaunchHero: FC<LaunchHeroProps> = ({ launch }) => {
+    if (!launch) return null;
     return (
         <HeroSection imgUrl={getLaunchImgUrl(launch)}>
             <Box sx={styles.container}>

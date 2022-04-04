@@ -1,7 +1,7 @@
 import { LaunchDetails } from 'src/api/launches/types';
 
 type LaunchMainProps = {
-    launch: LaunchDetails;
+    launch?: LaunchDetails;
 };
 
 export default LaunchMainProps;

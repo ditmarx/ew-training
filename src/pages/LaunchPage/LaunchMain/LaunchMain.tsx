@@ -7,6 +7,7 @@ import { getYoutubeIdFromUrl, getLaunchMapCenter } from 'src/utils/helper';
 import LaunchMainProps from './LaunchMain.types';
 
 const LaunchMain: FC<LaunchMainProps> = ({ launch }) => {
+    if (!launch) return null;
     return (
         <MainSection>
             <YoutubeEmbed id={getYoutubeIdFromUrl(null)} />

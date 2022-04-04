@@ -1,7 +1,7 @@
 import { RocketConfiguration } from 'src/api/rockets/types';
 
 type RocketMainProps = {
-    rocket: RocketConfiguration;
+    rocket?: RocketConfiguration;
 };
 
 export default RocketMainProps;

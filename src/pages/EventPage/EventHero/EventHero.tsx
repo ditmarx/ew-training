@@ -7,6 +7,7 @@ import styles from './EventHero.styles';
 import EventHeroProps from './EventHero.types';
 
 const EventHero: FC<EventHeroProps> = ({ event }) => {
+    if (!event) return null;
     return (
         <HeroSection imgUrl={event.feature_image}>
             <Box sx={styles.container}>

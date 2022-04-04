@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { useGetRocketDetailsQuery } from 'src/api/rockets';
 import { setPageTitle } from 'src/utils/setPageTitle';
 import { PageLayout } from 'src/components/containers';
-import { Loader } from 'src/components/common';
 import RocketHero from './RocketHero';
 import RocketMain from './RocketMain';
 
@@ -14,15 +13,12 @@ const RocketPage = () => {
     useEffect(() => setPageTitle('Rocket', id, rocket?.full_name), [id, rocket]);
 
     return (
-        <PageLayout>
-            {(isError || !rocket) ? (
-                <Loader isError={isError} />
-            ) : (
-                <>
-                    <RocketHero rocket={rocket} />
-                    <RocketMain rocket={rocket} />
-                </>
-            )}
+        <PageLayout
+            queryError={isError}
+            queryNoData={!rocket}
+        >
+            <RocketHero rocket={rocket} />
+            <RocketMain rocket={rocket} />
         </PageLayout>
     );
 };

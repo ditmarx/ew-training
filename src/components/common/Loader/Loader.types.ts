@@ -1,5 +1,5 @@
 type LoaderProps = {
-    isError: boolean;
+    isError?: boolean;
 };
 
 export default LoaderProps;

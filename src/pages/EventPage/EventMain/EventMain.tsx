@@ -6,6 +6,7 @@ import EventRelatedInfo from './EventRelatedInfo';
 import EventMainProps from './EventMain.types';
 
 const EventMain: FC<EventMainProps> = ({ event }) => {
+    if (!event) return null;
     return (
         <MainSection>
             <YoutubeEmbed id={getYoutubeIdFromUrl(event.video_url)}/>

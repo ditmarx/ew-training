@@ -6,6 +6,7 @@ import styles from './RocketHero.styles';
 import RocketHeroProps from './RocketHero.types';
 
 const RocketHero: FC<RocketHeroProps> = ({ rocket }) => {
+    if (!rocket) return null;
     const company = rocket.launch_service_provider;
     return (
         <HeroSection imgUrl={rocket.image_url}>

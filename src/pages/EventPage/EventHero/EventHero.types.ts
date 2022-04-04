@@ -1,7 +1,7 @@
 import { EventDetails } from 'src/api/events/types';
 
 type EventHeroProps = {
-    event: EventDetails;
+    event?: EventDetails;
 };
 
 export default EventHeroProps;
