@@ -1,12 +1,5 @@
 const styles = {
-    outerBox: {
-        // backgroundImage: `url(${image})`,
-        backgroundPosition: 'top center' as const,
-        backgroundRepeat: 'no-repeat' as const,
-        backgroundSize: 'auto 100%' as const,
-        marginBottom: -11.8,
-    },
-    innerBox: {
+    container: {
         height: 1080,
         maxWidth: 1440,
         marginX: 'auto',

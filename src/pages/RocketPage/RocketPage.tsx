@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useGetRocketDetailsQuery } from 'src/api/rockets';
 import { setPageTitle } from 'src/utils/setPageTitle';
-import { MainSection, PageLayout } from 'src/components/containers';
+import { HeroSection, MainSection, PageLayout } from 'src/components/containers';
 import RocketHero from './RocketHero';
 import RocketDetails from './RocketDetails';
 
@@ -17,7 +17,9 @@ const RocketPage = () => {
             {!rocket && (<>Loading...</>)}
             {rocket && (
                 <>
-                    <RocketHero rocket={rocket} />
+                    <HeroSection imgUrl={rocket.image_url}>
+                        <RocketHero rocket={rocket} />
+                    </HeroSection>
                     <MainSection>
                         <RocketDetails rocket={rocket} />
                     </MainSection>

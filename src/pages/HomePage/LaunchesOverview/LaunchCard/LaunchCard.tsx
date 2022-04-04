@@ -4,6 +4,7 @@ import { Box, Skeleton, Typography } from '@mui/material';
 import { Chip } from 'src/components/ui';
 import { ReactComponent as NoImgLogo } from 'src/assets/loader.svg';
 import { showDateTime } from 'src/utils/helper';
+import { getLaunchImgUrl } from 'src/api/utils/getLaunchImgUrl';
 import styles from './LaunchCard.styles';
 import LaunchCardProps from './LaunchCard.types';
 
@@ -29,14 +30,15 @@ const LaunchCard: FC<LaunchCardProps> = ({ launch }) => {
 
     const navToLaunchPage = () => navigate(`/launch/${launch.id}`);
 
-    const launchImgUrl =
-        launch?.image_url ??
-        launch?.rocket.configuration.image_url;
+    const launchImgUrl = getLaunchImgUrl(launch);
 
     return (
         <Box sx={styles.cardBox}>
             {!launchImgUrl ? (
-                <Box sx={styles.cardNoImage}>
+                <Box
+                    sx={styles.cardNoImage}
+                    onClick={navToLaunchPage}
+                >
                     <NoImgLogo height="50%" />
                 </Box>
             ) : (

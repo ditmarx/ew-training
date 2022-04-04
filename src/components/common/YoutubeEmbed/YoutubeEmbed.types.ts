@@ -1,5 +1,5 @@
 type YoutubeEmbedProps = {
-    id: string;
+    id?: string;
 };
 
 export default YoutubeEmbedProps;

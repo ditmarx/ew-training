@@ -4,6 +4,7 @@ import styles from './YoutubeEmbed.styles';
 import YoutubeEmbedProps from './YoutubeEmbed.types';
 
 const YoutubeEmbed: FC<YoutubeEmbedProps> = ({ id }) => {
+    if (!id) return null;
     return (
         <Box sx={styles.box}>
             <iframe

@@ -30,7 +30,10 @@ const EventCard: FC<EventCardProps> = ({ event }) => {
     return (
         <Box sx={styles.cardBox}>
             {!event.feature_image ? (
-                <Box sx={styles.cardNoImage}>
+                <Box
+                    sx={styles.cardNoImage}
+                    onClick={navToEventPage}
+                >
                     <NoImgLogo height="50%" />
                 </Box>
             ) : (

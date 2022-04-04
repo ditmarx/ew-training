@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useGetEventDetailsQuery } from 'src/api/events';
 import { getYoutubeIdFromUrl } from 'src/utils/helper';
 import { setPageTitle } from 'src/utils/setPageTitle';
-import { MainSection, PageLayout } from 'src/components/containers';
+import { HeroSection, MainSection, PageLayout } from 'src/components/containers';
 import { RecentEvents, YoutubeEmbed } from 'src/components/common';
 import EventHero from './EventHero';
 import EventRelatedInfo from './EventRelatedInfo';
@@ -14,16 +14,16 @@ const EventPage = () => {
 
     useEffect(() => setPageTitle('Event', id, event?.name), [id, event]);
 
-    const youtubeId = getYoutubeIdFromUrl(event?.video_url);
-
     return (
         <PageLayout>
             {!event && (<>Loading...</>)}
             {event && (
                 <>
-                    <EventHero event={event}/>
+                    <HeroSection imgUrl={event.feature_image}>
+                        <EventHero event={event}/>
+                    </HeroSection>
                     <MainSection>
-                        {youtubeId && <YoutubeEmbed id={youtubeId}/>}
+                        <YoutubeEmbed id={getYoutubeIdFromUrl(event.video_url)}/>
                         <EventRelatedInfo />
                         <RecentEvents />
                     </MainSection>

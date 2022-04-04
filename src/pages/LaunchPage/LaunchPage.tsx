@@ -1,9 +1,10 @@
 import { useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import { useGetLaunchDetailsQuery } from 'src/api/launches';
-import { getYoutubeIdFromUrl } from 'src/utils/helper';
+import { getLaunchImgUrl } from 'src/api/utils/getLaunchImgUrl';
+import { getLaunchMapCenter, getYoutubeIdFromUrl } from 'src/utils/helper';
 import { setPageTitle } from 'src/utils/setPageTitle';
-import { MainSection, PageLayout } from 'src/components/containers';
+import { HeroSection, MainSection, PageLayout } from 'src/components/containers';
 import { MapEmbed, YoutubeEmbed } from 'src/components/common';
 import LaunchHero from './LaunchHero';
 import LaunchInfo from './LaunchInfo';
@@ -15,24 +16,19 @@ const LaunchPage = () => {
 
     useEffect(() => setPageTitle('Launch', id, launch?.name), [id, launch]);
 
-    const youtubeId = getYoutubeIdFromUrl(null);
-
-    const mapCenter = launch && {
-        lat: parseFloat(launch.pad.latitude),
-        lng: parseFloat(launch.pad.longitude),
-    };
-
     return (
         <PageLayout>
             {!launch && (<>Loading...</>)}
             {launch && (
                 <>
-                    <LaunchHero launch={launch}/>
+                    <HeroSection imgUrl={getLaunchImgUrl(launch)}>
+                        <LaunchHero launch={launch}/>
+                    </HeroSection>
                     <MainSection>
-                        {youtubeId && <YoutubeEmbed id={youtubeId} />}
+                        <YoutubeEmbed id={getYoutubeIdFromUrl(null)} />
                         <LaunchInfo />
                         <RocketInfo rocket={launch.rocket.configuration} />
-                        <MapEmbed center={mapCenter} />
+                        <MapEmbed center={getLaunchMapCenter(launch)} />
                     </MainSection>
                 </>
             )}

@@ -8,7 +8,7 @@ export const extendedLaunchesApi = launchesApi.injectEndpoints({
                 url: 'launch/upcoming/',
                 method: 'GET',
                 params: {
-                    // mode: 'detailed',
+                    mode: 'detailed',
                     offset: page * 10,
                 },
             }),
