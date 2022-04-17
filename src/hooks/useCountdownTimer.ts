@@ -6,7 +6,7 @@ const useCountdownTimer = (date?: Date) => {
     useEffect(() => {
         if (date) {
             const timer = setInterval(() => {
-                const diff = Number(date) - Date.now();
+                const diff = Math.floor((Number(date) - Date.now()) / 1000);
                 setTimeLeft(diff);
                 if (diff < 0) clearInterval(timer);
             }, 1000);
